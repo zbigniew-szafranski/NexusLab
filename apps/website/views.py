@@ -1,1 +1,5 @@
-from django.shortcuts import render  # noqa: F401
+from django.shortcuts import render
+
+
+def home(request):
+    return render(request, 'website/index.html')

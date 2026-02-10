@@ -1,5 +1,9 @@
-from django.urls import path  # noqa: F401
+from django.urls import path
+
+from . import views
 
 app_name = 'website'
 
-urlpatterns = []
+urlpatterns = [
+    path('', views.home, name='home'),
+]

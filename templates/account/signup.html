@@ -1,0 +1,25 @@
+{% extends "account/base.html" %}
+
+{% block head_title %}Zarejestruj się — NexusLab{% endblock %}
+
+{% block inner_content %}
+<h2 class="text-2xl font-bold text-center text-gray-900 mb-6">Zarejestruj się</h2>
+
+<form method="post" action="{% url 'account_signup' %}" class="account-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit"
+            class="w-full mt-4 px-4 py-2 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 transition">
+        Utwórz konto
+    </button>
+</form>
+
+<div class="mt-6 text-center text-sm text-gray-600">
+    <p>
+        Masz już konto?
+        <a href="{% url 'account_login' %}" class="text-indigo-600 hover:text-indigo-500 font-medium">
+            Zaloguj się
+        </a>
+    </p>
+</div>
+{% endblock %}

@@ -93,17 +93,6 @@
                         </div>
                     </div>
 
-                    <!-- Email -->
-                    <div class="mb-6">
-                        <label for="{{ form.email.id_for_label }}" class="block text-sm font-medium text-gray-700">
-                            {{ form.email.label }}
-                        </label>
-                        {{ form.email }}
-                        {% if form.email.errors %}
-                            <p class="mt-1 text-sm text-red-600">{{ form.email.errors.0 }}</p>
-                        {% endif %}
-                    </div>
-
                     {% if form.non_field_errors %}
                         <div class="mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
                             {% for error in form.non_field_errors %}

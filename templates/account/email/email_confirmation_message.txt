@@ -1,0 +1,8 @@
+{% extends "account/email/base_message.txt" %}
+{% load account %}
+
+{% block content %}{% autoescape off %}{% user_display user as user_display %}Otrzymujesz tę wiadomość, ponieważ użytkownik {{ user_display }} podał ten adres email podczas rejestracji konta na {{ current_site.domain }}.
+
+Aby potwierdzić, że to Twój adres, kliknij poniższy link:
+
+{{ activate_url }}{% endautoescape %}{% endblock content %}

@@ -1,0 +1,8 @@
+{% autoescape off %}Cześć!
+
+{% block content %}{% endblock content %}
+
+Pozdrawiamy,
+Zespół {{ current_site.name }}
+{{ current_site.domain }}
+{% endautoescape %}

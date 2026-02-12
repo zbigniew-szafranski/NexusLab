@@ -5,27 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block head_title %}NexusLab{% endblock %}</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#070d1a',
+                            800: '#0b1628',
+                            700: '#0f1f38',
+                            600: '#142a4a',
+                            500: '#1a3558',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f5a623',
+                            600: '#d4911e',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
     {% block extra_head %}{% endblock %}
 </head>
-<body class="min-h-screen flex flex-col bg-gray-50 text-gray-900">
+<body class="min-h-screen flex flex-col bg-navy-900 text-white">
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm border-b border-gray-200">
+    <nav class="bg-navy-800 border-b border-navy-600/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <a href="https://nexuslab.pl" class="text-xl font-bold text-indigo-600">NexusLab</a>
+                <a href="https://nexuslab.pl" class="text-xl font-bold">Nexus<span class="text-gold-500">Lab</span></a>
                 <div class="flex items-center space-x-4">
                     {% if user.is_authenticated %}
-                        <span class="text-sm text-gray-600">{{ user.email }}</span>
+                        <span class="text-sm text-gray-400">{{ user.email }}</span>
                         <a href="{% url 'account_logout' %}"
-                           class="text-sm text-gray-600 hover:text-indigo-600 transition">Wyloguj</a>
+                           class="text-sm text-gray-400 hover:text-gold-500 transition">Wyloguj</a>
                     {% else %}
                         <a href="{% url 'account_login' %}"
-                           class="text-sm text-gray-600 hover:text-indigo-600 transition">Zaloguj</a>
+                           class="text-sm text-gray-400 hover:text-gold-500 transition">Zaloguj</a>
                         <a href="{% url 'account_signup' %}"
-                           class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-700 transition">
+                           class="inline-flex items-center px-4 py-2 bg-gold-500 text-navy-900 text-sm font-medium rounded-md hover:bg-gold-400 transition">
                             Zarejestruj
                         </a>
                     {% endif %}
@@ -39,10 +61,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
         {% for message in messages %}
         <div class="mb-2 px-4 py-3 rounded-md text-sm
-            {% if message.tags == 'success' %}bg-green-50 text-green-800 border border-green-200
-            {% elif message.tags == 'error' %}bg-red-50 text-red-800 border border-red-200
-            {% elif message.tags == 'warning' %}bg-yellow-50 text-yellow-800 border border-yellow-200
-            {% else %}bg-blue-50 text-blue-800 border border-blue-200{% endif %}"
+            {% if message.tags == 'success' %}bg-green-900/30 text-green-400 border border-green-800
+            {% elif message.tags == 'error' %}bg-red-900/30 text-red-400 border border-red-800
+            {% elif message.tags == 'warning' %}bg-yellow-900/30 text-yellow-400 border border-yellow-800
+            {% else %}bg-blue-900/30 text-blue-400 border border-blue-800{% endif %}"
             x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000)">
             <div class="flex justify-between items-center">
                 <span>{{ message }}</span>
@@ -59,7 +81,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 mt-auto">
+    <footer class="bg-navy-800 border-t border-navy-600/50 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <p class="text-center text-sm text-gray-500">
                 &copy; {{ current_year|default:"2026" }} NexusLab. Wszelkie prawa zastrzeżone.

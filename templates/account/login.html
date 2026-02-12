@@ -3,26 +3,26 @@
 {% block head_title %}Zaloguj się — NexusLab{% endblock %}
 
 {% block inner_content %}
-<h2 class="text-2xl font-bold text-center text-gray-900 mb-6">Zaloguj się</h2>
+<h2 class="text-2xl font-bold text-center mb-6">Zaloguj się</h2>
 
 <form method="post" action="{% url 'account_login' %}" class="account-form">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit"
-            class="w-full mt-4 px-4 py-2 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 transition">
+            class="w-full mt-4 px-4 py-2 bg-gold-500 text-navy-900 font-bold rounded-md hover:bg-gold-400 transition">
         Zaloguj
     </button>
 </form>
 
-<div class="mt-6 text-center text-sm text-gray-600 space-y-2">
+<div class="mt-6 text-center text-sm text-gray-400 space-y-2">
     <p>
-        <a href="{% url 'account_reset_password' %}" class="text-indigo-600 hover:text-indigo-500">
+        <a href="{% url 'account_reset_password' %}" class="text-gold-500 hover:text-gold-400">
             Zapomniałeś hasła?
         </a>
     </p>
     <p>
         Nie masz konta?
-        <a href="{% url 'account_signup' %}" class="text-indigo-600 hover:text-indigo-500 font-medium">
+        <a href="{% url 'account_signup' %}" class="text-gold-500 hover:text-gold-400 font-medium">
             Zarejestruj się
         </a>
     </p>

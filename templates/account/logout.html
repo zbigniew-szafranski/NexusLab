@@ -3,9 +3,9 @@
 {% block head_title %}Wyloguj — NexusLab{% endblock %}
 
 {% block inner_content %}
-<h2 class="text-2xl font-bold text-center text-gray-900 mb-6">Wyloguj</h2>
+<h2 class="text-2xl font-bold text-center mb-6">Wyloguj</h2>
 
-<p class="text-center text-gray-600 mb-6">Czy na pewno chcesz się wylogować?</p>
+<p class="text-center text-gray-400 mb-6">Czy na pewno chcesz się wylogować?</p>
 
 <form method="post" action="{% url 'account_logout' %}">
     {% csrf_token %}

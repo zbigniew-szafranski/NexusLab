@@ -1,24 +1,24 @@
 {% if success %}
-<div class="p-3 bg-green-50 border border-green-200 rounded-md"
+<div class="p-3 bg-green-900/30 border border-green-800 rounded-md"
      x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000)">
     <div class="flex justify-between items-center">
-        <p class="text-sm text-green-800">Konfiguracja została zapisana pomyślnie.</p>
-        <button @click="show = false" class="ml-4 text-green-600 opacity-50 hover:opacity-100">&times;</button>
+        <p class="text-sm text-green-400">Konfiguracja została zapisana pomyślnie.</p>
+        <button @click="show = false" class="ml-4 text-green-400 opacity-50 hover:opacity-100">&times;</button>
     </div>
 </div>
 {% endif %}
 
 {% if error %}
-<div class="p-3 bg-red-50 border border-red-200 rounded-md">
-    <p class="text-sm text-red-800">{{ error }}</p>
+<div class="p-3 bg-red-900/30 border border-red-800 rounded-md">
+    <p class="text-sm text-red-400">{{ error }}</p>
     {% if form %}
         {% for field in form %}
             {% for err in field.errors %}
-                <p class="text-sm text-red-600 mt-1">{{ field.label }}: {{ err }}</p>
+                <p class="text-sm text-red-400 mt-1">{{ field.label }}: {{ err }}</p>
             {% endfor %}
         {% endfor %}
         {% for err in form.non_field_errors %}
-            <p class="text-sm text-red-600 mt-1">{{ err }}</p>
+            <p class="text-sm text-red-400 mt-1">{{ err }}</p>
         {% endfor %}
     {% endif %}
 </div>

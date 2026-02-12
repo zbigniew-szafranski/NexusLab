@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'apps.gratka',
     'apps.chatbot',
     'apps.dashboard',
+    'apps.subscriptions',
 ]
 
 MIDDLEWARE = [
@@ -42,6 +43,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'allauth.account.middleware.AccountMiddleware',
     'config.middleware.SubdomainMiddleware',
+    'config.middleware.SubscriptionMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]

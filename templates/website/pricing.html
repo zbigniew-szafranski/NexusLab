@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block head_title %}Cennik — NexusLab{% endblock %}
+
+{% block content %}
+<section class="py-16 sm:py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Nagłówek -->
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-center">Cennik</h1>
+        <p class="mt-4 text-center text-gray-400 max-w-2xl mx-auto text-lg">
+            Wybierz plan dopasowany do Twoich potrzeb. Zacznij od darmowego testu.
+        </p>
+
+        <!-- Plany -->
+        <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+
+            <!-- Plan Darmowy -->
+            <div class="bg-navy-800 rounded-2xl p-8 border border-navy-600/50 flex flex-col">
+                <h3 class="text-xl font-bold">Darmowy</h3>
+                <div class="mt-4">
+                    <span class="text-4xl font-extrabold">0</span>
+                    <span class="text-lg text-gray-400 ml-1">PLN</span>
+                </div>
+                <p class="mt-2 text-sm text-gray-400">7 dni darmowego testu</p>
+
+                <ul class="mt-8 space-y-4 text-sm text-gray-300 flex-1">
+                    <li class="flex items-start gap-3">
+                        <svg class="h-5 w-5 text-gold-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        Monitorowanie 1 lokalizacji
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="h-5 w-5 text-gold-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        Skanowanie co godzinę
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="h-5 w-5 text-gold-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        Powiadomienia email
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="h-5 w-5 text-gold-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        Dostęp do panelu Gratka Alerts
+                    </li>
+                </ul>
+
+                <a href="{% url 'account_signup' %}"
+                   class="mt-8 block w-full text-center py-3.5 border-2 border-navy-500 text-gray-300 font-semibold rounded-full hover:border-gold-500/50 hover:text-white transition">
+                    Zacznij za darmo
+                </a>
+            </div>
+
+            <!-- Plan Pro -->
+            <div class="bg-navy-800 rounded-2xl p-8 border-2 border-gold-500 relative flex flex-col">
+                <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold-500 text-navy-900 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    Popularny
+                </span>
+                <h3 class="text-xl font-bold">Pro</h3>
+                <div class="mt-4">
+                    <span class="text-4xl font-extrabold text-gold-500">49</span>
+                    <span class="text-lg text-gray-400 ml-1">PLN / mies.</span>
+                </div>
+                <p class="mt-2 text-sm text-gray-400">Pełny dostęp bez ograniczeń</p>
+
+                <ul class="mt-8 space-y-4 text-sm text-gray-300 flex-1">
+                    <li class="flex items-start gap-3">
+                        <svg class="h-5 w-5 text-gold-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        Wszystko z planu Darmowego
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="h-5 w-5 text-gold-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        Nieograniczony dostęp
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="h-5 w-5 text-gold-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        Priorytetowe powiadomienia
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="h-5 w-5 text-gold-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        Wsparcie techniczne
+                    </li>
+                </ul>
+
+                <a href="{% url 'account_signup' %}"
+                   class="mt-8 block w-full text-center py-3.5 bg-gold-500 text-navy-900 font-bold rounded-full shadow-lg shadow-gold-500/20 hover:bg-gold-400 transition">
+                    Wybierz Pro
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Info o trialu -->
+        <p class="mt-12 text-center text-sm text-gray-500">
+            Każde nowe konto otrzymuje 7 dni darmowego dostępu. Bez karty kredytowej.
+        </p>
+
+    </div>
+</section>
+{% endblock %}

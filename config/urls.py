@@ -9,4 +9,5 @@ urlpatterns = [
     path('gratka/', include('apps.gratka.urls')),
     path('chatbot/', include('apps.chatbot.urls')),
     path('dashboard/', include('apps.dashboard.urls')),
+    path('subskrypcja/', include('apps.subscriptions.urls')),
 ]

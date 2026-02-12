@@ -7,4 +7,5 @@ urlpatterns = [
     path('gratka/', RedirectView.as_view(url='/', permanent=False)),
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
+    path('subskrypcja/', include('apps.subscriptions.urls')),
 ]

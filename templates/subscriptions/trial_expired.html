@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block head_title %}Okres próbny wygasł — NexusLab{% endblock %}
+
+{% block content %}
+<div class="flex items-center justify-center py-16 sm:py-24 px-4">
+    <div class="max-w-md w-full bg-navy-800 rounded-2xl p-10 border border-navy-600/50 text-center">
+
+        <!-- Ikona -->
+        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-red-500/10 text-red-400">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+        </div>
+
+        <h1 class="mt-6 text-2xl font-bold">Twój okres próbny wygasł</h1>
+
+        <p class="mt-3 text-gray-400">
+            7-dniowy darmowy dostęp do Gratka Alerts dobiegł końca.
+            Wykup plan Pro, aby kontynuować monitorowanie ofert.
+        </p>
+
+        <div class="mt-8 space-y-3">
+            <a href="{% url 'website:pricing' %}"
+               class="block w-full py-3.5 bg-gold-500 text-navy-900 font-bold rounded-full shadow-lg shadow-gold-500/20 hover:bg-gold-400 transition">
+                Zobacz cennik
+            </a>
+            <a href="/"
+               class="block w-full py-3.5 border border-navy-500 text-gray-300 rounded-full hover:border-gold-500/50 hover:text-white transition">
+                Wróć na stronę główną
+            </a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

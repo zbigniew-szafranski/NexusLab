@@ -11,11 +11,16 @@ def dashboard(request):
     form = UserConfigForm(instance=config)
     offers = UserOffer.objects.filter(user=request.user)[:20]
 
-    return render(request, 'gratka/dashboard.html', {
+    response = render(request, 'gratka/dashboard.html', {
         'form': form,
         'config': config,
         'offers': offers,
     })
+
+    # Mark all unread offers as read after rendering
+    UserOffer.objects.filter(user=request.user, is_read=False).update(is_read=True)
+
+    return response
 
 
 @login_required

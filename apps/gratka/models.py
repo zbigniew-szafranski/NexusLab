@@ -39,6 +39,7 @@ class UserOffer(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     date_scraped = models.DateTimeField(auto_now_add=True)
     sent_to_client = models.BooleanField(default=False)
+    is_read = models.BooleanField(default=False)
 
     class Meta:
         db_table = 'gratka_useroffer'

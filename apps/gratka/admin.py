@@ -12,7 +12,7 @@ class UserConfigAdmin(admin.ModelAdmin):
 
 @admin.register(UserOffer)
 class UserOfferAdmin(admin.ModelAdmin):
-    list_display = ('user', 'title', 'price', 'area', 'rooms', 'sent_to_client', 'date_added')
-    list_filter = ('sent_to_client', 'date_added')
+    list_display = ('user', 'title', 'price', 'area', 'rooms', 'sent_to_client', 'is_read', 'date_added')
+    list_filter = ('sent_to_client', 'is_read', 'date_added')
     search_fields = ('user__username', 'title', 'offer_id')
     readonly_fields = ('date_added', 'date_scraped')

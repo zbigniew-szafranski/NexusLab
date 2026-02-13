@@ -1,0 +1,1 @@
+Wczytaj plik .claude/session-state.md i zapoznaj sie z kontekstem poprzedniej sesji. Przedstaw krotkie podsumowanie tego co wiesz z poprzedniej sesji i zapytaj czym sie teraz zajmujemy.

@@ -5,6 +5,7 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('', include('apps.gratka.urls')),
     path('gratka/', RedirectView.as_view(url='/', permanent=False)),
+    path('accounts/signup/', RedirectView.as_view(url='/accounts/login/', permanent=False)),
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
     path('subskrypcja/', include('apps.subscriptions.urls')),

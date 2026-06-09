@@ -143,9 +143,9 @@ ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 
 # Rate limiting for password reset abuse prevention
 ACCOUNT_RATE_LIMITS = {
-    "reset_password": "3/h/ip",
-    "login_failed": "5/m/ip,5/m/key",
-    "signup": "5/m/ip",
+    "reset_password": "3/h",
+    "login_failed": "5/m",
+    "signup": "5/m",
 }
 
 LOGIN_REDIRECT_URL = '/gratka/'

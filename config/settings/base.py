@@ -108,6 +108,14 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = env('GMAIL_EMAIL')
 EMAIL_HOST_PASSWORD = env('GMAIL_APP_PASSWORD')
 
+# Cache (Redis — required for allauth rate limiting across Gunicorn workers)
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': 'redis://localhost:6379/1',
+    }
+}
+
 # Celery
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
@@ -132,6 +140,13 @@ ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+
+# Rate limiting for password reset abuse prevention
+ACCOUNT_RATE_LIMITS = {
+    "reset_password": "3/h/ip",
+    "login_failed": "5/m/ip,5/m/key",
+    "signup": "5/m/ip",
+}
 
 LOGIN_REDIRECT_URL = '/gratka/'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'

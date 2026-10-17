@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block head_title %}NexusLab — Automatyzacja z AI{% endblock %}
+{% block head_title %}NexusLab — Portfolio: automatyzacja, AI i aplikacje webowe{% endblock %}
 
 {% block content %}
 
@@ -9,136 +9,129 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center">
         <p class="inline-flex items-center gap-2 text-sm uppercase tracking-wider text-gray-400 mb-6">
             <span class="w-2 h-2 rounded-full bg-gold-500"></span>
-            Automatyzacja nieruchomości z AI
+            Portfolio
         </p>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
-            Monitoruj oferty z <span class="text-gold-500">Gratka.pl</span> automatycznie
+            Automatyzacja, <span class="text-gold-500">AI</span> i aplikacje webowe
         </h1>
         <p class="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-gray-400">
-            Gratka Alerts — ustaw kryteria raz, a my znajdziemy oferty za Ciebie.
-            Skanowanie co godzinę. Powiadomienia na email. Same konkrety.
+            Projektuję i wdrażam narzędzia, które oszczędzają czas: od scraperów i workflow
+            automatyzacji, przez aplikacje SaaS, po strony generujące leady.
         </p>
         <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-            <a href="{% url 'website:pricing' %}"
-               class="inline-flex items-center justify-center px-8 py-3.5 border-2 border-navy-500 text-gray-300 font-semibold rounded-full hover:border-gold-500/50 hover:text-white transition text-lg">
-                Zobacz cennik
+            <a href="#projekty"
+               class="inline-flex items-center justify-center px-8 py-3.5 bg-gold-500 text-navy-900 font-bold rounded-full hover:bg-gold-400 transition text-lg">
+                Zobacz projekty
             </a>
         </div>
     </div>
 </section>
 
-<!-- Jak to działa -->
-<section id="jak-to-dziala" class="py-16 sm:py-24">
+<!-- Projekty -->
+<section id="projekty" class="py-16 sm:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center">Jak to działa?</h2>
+        <h2 class="text-3xl font-bold text-center">Projekty</h2>
         <p class="mt-4 text-center text-gray-400 max-w-2xl mx-auto">
-            Trzy proste kroki dzielą Cię od automatycznego monitoringu ofert.
+            Wybrane realizacje działające na produkcji.
         </p>
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <!-- Gratka Alerts -->
+            <article class="flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+                <div class="flex items-center justify-between gap-4">
+                    <h3 class="text-2xl font-bold">Gratka Alerts</h3>
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">SaaS</span>
+                </div>
+                <p class="mt-4 text-gray-400">
+                    Wielodostępowy system monitorowania ofert nieruchomości. Użytkownik ustawia kryteria
+                    (lokalizacja, cena, metraż, balkon, garaż, piwnica), a system co godzinę skanuje
+                    Gratka.pl, deduplikuje oferty i wysyła powiadomienia email o nowych pasujących ogłoszeniach.
+                </p>
+                <ul class="mt-6 space-y-2 text-sm text-gray-400">
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Scraper w n8n uruchamiany co godzinę</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Izolacja danych między użytkownikami</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> 7-dniowy trial i plany subskrypcyjne</li>
+                </ul>
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Django</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">PostgreSQL</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">n8n</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Celery</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">HTMX</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Tailwind CSS</span>
+                </div>
+                <div class="mt-auto pt-8 flex flex-col sm:flex-row gap-3">
+                    <a href="https://gratka.nexuslab.pl"
+                       class="inline-flex items-center justify-center px-6 py-3 bg-gold-500 text-navy-900 font-bold rounded-full hover:bg-gold-400 transition">
+                        Otwórz aplikację →
+                    </a>
+                    <a href="{% url 'website:pricing' %}"
+                       class="inline-flex items-center justify-center px-6 py-3 border-2 border-navy-500 text-gray-300 font-semibold rounded-full hover:border-gold-500/50 hover:text-white transition">
+                        Cennik
+                    </a>
+                </div>
+            </article>
+
+            <!-- sprzedajm.pl -->
+            <article class="flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+                <div class="flex items-center justify-between gap-4">
+                    <h3 class="text-2xl font-bold">sprzedajm.pl</h3>
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">Lejek sprzedażowy</span>
+                </div>
+                <p class="mt-4 text-gray-400">
+                    Jednostronicowy lejek generujący leady dla N Inwestycje — łódzkiej firmy skupującej
+                    nieruchomości za gotówkę i prowadzącej pośrednictwo. Każda sekcja, od problemu
+                    sprzedającego po FAQ, prowadzi do 3-krokowego quizu wyceny, a zgłoszenie trafia
+                    mailem do handlowca razem z informacją, którą ścieżkę wybrał klient.
+                </p>
+                <ul class="mt-6 space-y-2 text-sm text-gray-400">
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Routing intencji: osobne ścieżki „skup” i „pośrednictwo”</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Quiz wyceny z walidacją telefonu i obsługą leadów w PHP</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> SEO i widoczność w AI: dane strukturalne JSON-LD, robots.txt dla botów AI</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Agent AI (Claude API) generujący miesięczny plan postów na FB i IG</li>
+                </ul>
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">HTML / CSS / JS</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">PHP</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Python</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Claude API</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">JSON-LD</span>
+                </div>
+                <div class="mt-auto pt-8">
+                    <a href="https://sprzedajm.pl/" target="_blank" rel="noopener"
+                       class="inline-flex items-center justify-center px-6 py-3 bg-gold-500 text-navy-900 font-bold rounded-full hover:bg-gold-400 transition">
+                        Odwiedź stronę ↗
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- Czym się zajmuję -->
+<section id="uslugi" class="py-16 sm:py-24 bg-navy-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center">Czym się zajmuję</h2>
         <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Krok 1 -->
-            <div class="text-center bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
-                <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-gold-500/10 text-gold-500">
-                    <span class="text-2xl font-bold">1</span>
-                </div>
-                <h3 class="mt-6 text-lg font-semibold">Ustaw kryteria</h3>
-                <p class="mt-2 text-gray-400">
-                    Wybierz lokalizację, zakres cen, metraż i inne filtry dopasowane do Twoich potrzeb.
-                </p>
-            </div>
-            <!-- Krok 2 -->
-            <div class="text-center bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
-                <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-gold-500/10 text-gold-500">
-                    <span class="text-2xl font-bold">2</span>
-                </div>
-                <h3 class="mt-6 text-lg font-semibold">Automatyczne skanowanie</h3>
-                <p class="mt-2 text-gray-400">
-                    Nasz system przeszukuje Gratka.pl co godzinę i porównuje oferty z Twoimi kryteriami.
-                </p>
-            </div>
-            <!-- Krok 3 -->
-            <div class="text-center bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
-                <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-gold-500/10 text-gold-500">
-                    <span class="text-2xl font-bold">3</span>
-                </div>
-                <h3 class="mt-6 text-lg font-semibold">Powiadomienia email</h3>
-                <p class="mt-2 text-gray-400">
-                    Otrzymujesz email z nowymi ofertami, które spełniają Twoje kryteria — bez ręcznego szukania.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Funkcje -->
-<section id="funkcje" class="py-16 sm:py-24 bg-navy-800/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center">Funkcje</h2>
-        <p class="mt-4 text-center text-gray-400 max-w-2xl mx-auto">
-            Wszystko, czego potrzebujesz, aby nie przegapić idealnej oferty.
-        </p>
-        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Lokalizacja + cena -->
             <div class="bg-navy-800 rounded-xl p-6 border border-navy-600/50 hover:border-gold-500/30 transition">
-                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gold-500/10 text-gold-500">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                    </svg>
-                </div>
-                <h3 class="mt-4 text-base font-semibold">Lokalizacja i cena</h3>
+                <h3 class="text-lg font-semibold text-gold-500">Automatyzacja procesów</h3>
                 <p class="mt-2 text-sm text-gray-400">
-                    Filtruj oferty po mieście lub dzielnicy oraz ustal minimalny i maksymalny zakres cenowy.
+                    Workflow w n8n, scrapery, integracje API i zadania w tle, które działają bez ręcznej pracy.
                 </p>
             </div>
-            <!-- Metraż + pokoje -->
             <div class="bg-navy-800 rounded-xl p-6 border border-navy-600/50 hover:border-gold-500/30 transition">
-                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gold-500/10 text-gold-500">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
-                    </svg>
-                </div>
-                <h3 class="mt-4 text-base font-semibold">Metraż i pokoje</h3>
+                <h3 class="text-lg font-semibold text-gold-500">Aplikacje webowe i SaaS</h3>
                 <p class="mt-2 text-sm text-gray-400">
-                    Określ minimalną powierzchnię i liczbę pokoi, aby widzieć tylko pasujące oferty.
+                    Aplikacje w Django z kontami użytkowników, subskrypcjami i wdrożeniem na własnym serwerze.
                 </p>
             </div>
-            <!-- Balkon / garaż / piwnica -->
             <div class="bg-navy-800 rounded-xl p-6 border border-navy-600/50 hover:border-gold-500/30 transition">
-                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gold-500/10 text-gold-500">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                    </svg>
-                </div>
-                <h3 class="mt-4 text-base font-semibold">Dodatkowe filtry</h3>
+                <h3 class="text-lg font-semibold text-gold-500">Strony i integracje AI</h3>
                 <p class="mt-2 text-sm text-gray-400">
-                    Zaznacz wymagania: balkon, garaż lub piwnica — zobaczysz tylko oferty, które je spełniają.
+                    Landing page'e nastawione na konwersję oraz wykorzystanie modeli AI do analizy i obsługi danych.
                 </p>
             </div>
-            <!-- Powiadomienia email -->
-            <div class="bg-navy-800 rounded-xl p-6 border border-navy-600/50 hover:border-gold-500/30 transition">
-                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gold-500/10 text-gold-500">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-                    </svg>
-                </div>
-                <h3 class="mt-4 text-base font-semibold">Powiadomienia email</h3>
-                <p class="mt-2 text-sm text-gray-400">
-                    Nowe oferty trafiają prosto na Twoją skrzynkę — reaguj szybciej niż inni.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CTA końcowy -->
-<section class="py-16 sm:py-24">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="bg-navy-800 rounded-2xl p-12 border border-navy-600/50">
-            <h2 class="text-3xl font-bold">Zacznij monitorować oferty</h2>
-            <p class="mt-4 text-lg text-gray-400">
-                Załóż darmowe konto i skonfiguruj alerty w kilka minut.
-            </p>
         </div>
     </div>
 </section>

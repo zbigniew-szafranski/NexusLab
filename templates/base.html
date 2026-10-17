@@ -68,8 +68,13 @@
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center space-x-8">
                     <a href="https://nexuslab.pl" class="text-xl font-bold">Nexus<span class="text-gold-500">Lab</span></a>
+                    {% if request.get_host|slice:":7" == "gratka." %}
                     <a href="https://nexuslab.pl/cennik/"
                        class="text-sm text-gray-400 hover:text-gold-500 transition">Cennik</a>
+                    {% else %}
+                    <a href="https://nexuslab.pl/#kontakt"
+                       class="text-sm text-gray-400 hover:text-gold-500 transition">Kontakt</a>
+                    {% endif %}
                 </div>
                 <div class="flex items-center space-x-4">
                     {% if user.is_authenticated %}

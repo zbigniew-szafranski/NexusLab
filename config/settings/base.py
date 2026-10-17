@@ -154,3 +154,6 @@ ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/accounts/login/'
 
 DEFAULT_FROM_EMAIL = env('GMAIL_EMAIL')
+
+# Recipient of the contact form on nexuslab.pl
+CONTACT_EMAIL = env('CONTACT_EMAIL', default='kontakt@nexuslab.pl')

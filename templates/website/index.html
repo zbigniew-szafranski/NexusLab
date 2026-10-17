@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block head_title %}NexusLab — Portfolio: automatyzacja, AI i aplikacje webowe{% endblock %}
 
@@ -23,6 +24,52 @@
                class="inline-flex items-center justify-center px-8 py-3.5 bg-gold-500 text-navy-900 font-bold rounded-full hover:bg-gold-400 transition text-lg">
                 Zobacz projekty
             </a>
+        </div>
+    </div>
+</section>
+
+<!-- O mnie -->
+<section id="o-mnie" class="py-16 sm:py-24 bg-navy-800/50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-14 items-center">
+            <div class="md:col-span-2">
+                <picture>
+                    <source srcset="{% static 'img/zbigniew.webp' %}" type="image/webp">
+                    <img src="{% static 'img/zbigniew.jpg' %}" width="640" height="800" loading="lazy"
+                         alt="Zbigniew Szafrański"
+                         class="w-full max-w-xs mx-auto md:max-w-none rounded-2xl border border-navy-600/50 shadow-lg shadow-gold-500/10">
+                </picture>
+            </div>
+            <div class="md:col-span-3">
+                <p class="text-sm uppercase tracking-wider text-gold-500">O mnie</p>
+                <h2 class="mt-2 text-3xl font-bold">Zbigniew Szafrański</h2>
+                <div class="mt-6 space-y-4 text-gray-400">
+                    <p>
+                        Buduję automatyzacje i aplikacje, które zdejmują z ludzi powtarzalną pracę.
+                        Zaczynam od rozmowy o tym, co zajmuje najwięcej czasu, a kończę na działającym
+                        narzędziu — wdrożonym, utrzymywanym i używanym na co dzień.
+                    </p>
+                    <p>
+                        Łączę workflow w n8n, aplikacje w Django i modele AI (Claude, OpenAI) z tym,
+                        czego firmy już używają: mailem, Telegramem, Google Sheets, SMS-ami i telefonem.
+                        Pracowałem dla branży nieruchomości, doradców sprzedaży i aptek.
+                    </p>
+                    <p>
+                        Stawiam na rozwiązania proste w obsłudze: klient wysyła głosówkę, zdjęcie albo
+                        wypełnia krótki formularz — resztę robi system.
+                    </p>
+                </div>
+                <div class="mt-8 flex flex-col sm:flex-row gap-3">
+                    <a href="#kontakt"
+                       class="inline-flex items-center justify-center px-6 py-3 bg-gold-500 text-navy-900 font-bold rounded-full hover:bg-gold-400 transition">
+                        Porozmawiajmy
+                    </a>
+                    <a href="#projekty"
+                       class="inline-flex items-center justify-center px-6 py-3 border-2 border-navy-500 text-gray-300 font-semibold rounded-full hover:border-gold-500/50 hover:text-white transition">
+                        Zobacz projekty
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>

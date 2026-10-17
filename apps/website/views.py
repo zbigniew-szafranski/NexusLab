@@ -4,6 +4,7 @@ import logging
 from django.conf import settings
 from django.core.cache import cache
 from django.core.mail import EmailMessage
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils.safestring import mark_safe
 from django.views.decorators.http import require_POST
@@ -91,6 +92,34 @@ def home(request):
         'faq_schema': _faq_schema(),
         'testimonials': TESTIMONIALS,
     })
+
+
+def privacy(request):
+    return render(request, 'website/privacy.html', {'updated': '18 października 2026'})
+
+
+def robots_txt(request):
+    lines = [
+        'User-agent: *',
+        'Allow: /',
+        'Disallow: /admin/',
+        'Disallow: /accounts/',
+        '',
+        'Sitemap: https://nexuslab.pl/sitemap.xml',
+    ]
+    return HttpResponse('\n'.join(lines) + '\n', content_type='text/plain')
+
+
+SITEMAP_PATHS = ['/', '/cennik/', '/polityka-prywatnosci/']
+
+
+def sitemap_xml(request):
+    urls = ''.join(f'<url><loc>https://nexuslab.pl{path}</loc></url>' for path in SITEMAP_PATHS)
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>'
+        f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>'
+    )
+    return HttpResponse(xml, content_type='application/xml')
 
 
 def pricing(request):

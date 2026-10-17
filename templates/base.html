@@ -108,13 +108,18 @@
                     {% endif %}
                 </div>
                 <div class="flex items-center space-x-4">
-                    {% if user.is_authenticated %}
-                        <span class="text-sm text-gray-400">{{ user.email }}</span>
-                        <a href="{% url 'account_logout' %}"
-                           class="text-sm text-gray-400 hover:text-gold-500 transition">Wyloguj</a>
+                    {% if request.get_host|slice:":7" == "gratka." %}
+                        {% if user.is_authenticated %}
+                            <span class="hidden sm:inline text-sm text-gray-400">{{ user.email }}</span>
+                            <a href="{% url 'account_logout' %}"
+                               class="text-sm text-gray-400 hover:text-gold-500 transition">Wyloguj</a>
+                        {% else %}
+                            <a href="{% url 'account_login' %}"
+                               class="text-sm text-gray-400 hover:text-gold-500 transition">Zaloguj</a>
+                        {% endif %}
                     {% else %}
-                        <a href="{% url 'account_login' %}"
-                           class="text-sm text-gray-400 hover:text-gold-500 transition">Zaloguj</a>
+                        <a href="https://gratka.nexuslab.pl"
+                           class="text-sm text-gray-400 hover:text-gold-500 transition">Gratka Alerts →</a>
                     {% endif %}
                 </div>
             </div>
@@ -150,6 +155,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <p class="text-center text-sm text-gray-500">
                 &copy; {{ current_year|default:"2026" }} NexusLab. Wszelkie prawa zastrzeżone.
+                <span class="mx-2" aria-hidden="true">·</span>
+                <a href="https://nexuslab.pl/polityka-prywatnosci/" class="hover:text-gold-500 transition">Polityka prywatności</a>
             </p>
         </div>
     </footer>

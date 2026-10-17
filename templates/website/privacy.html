@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block head_title %}Polityka prywatności — NexusLab{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Polityka prywatności serwisu nexuslab.pl i aplikacji Gratka Alerts: jakie dane przetwarzamy, w jakim celu i jakie masz prawa.">
+    <link rel="canonical" href="https://nexuslab.pl/polityka-prywatnosci/">
+{% endblock %}
+
+{% block content %}
+<article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <h1 class="text-3xl sm:text-4xl font-bold">Polityka prywatności</h1>
+    <p class="mt-3 text-sm text-gray-500">Ostatnia aktualizacja: {{ updated }}</p>
+
+    <div class="mt-10 space-y-10 text-gray-400 leading-relaxed [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:text-white [&_h2]:mb-3 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-1 [&_a]:text-gold-500 hover:[&_a]:text-gold-400 [&_strong]:text-gray-300">
+
+        <section>
+            <h2>1. Administrator danych</h2>
+            <p>
+                Administratorem Twoich danych osobowych jest <strong>Zbigniew Szafrański</strong>, prowadzący serwis
+                NexusLab (nexuslab.pl) oraz aplikację Gratka Alerts (gratka.nexuslab.pl).
+                W sprawach dotyczących danych osobowych napisz na
+                <a href="mailto:kontakt@nexuslab.pl">kontakt@nexuslab.pl</a>.
+            </p>
+        </section>
+
+        <section>
+            <h2>2. Jakie dane przetwarzamy i po co</h2>
+            <p class="mb-4"><strong>Formularz kontaktowy</strong> — imię i nazwisko, adres email, opcjonalnie numer telefonu
+                oraz treść wiadomości. Przetwarzamy je, aby odpowiedzieć na Twoje zapytanie i przygotować ofertę
+                (art. 6 ust. 1 lit. b RODO — działania przed zawarciem umowy, oraz lit. f — prawnie uzasadniony
+                interes, czyli prowadzenie korespondencji).</p>
+            <p class="mb-4"><strong>Konto w Gratka Alerts</strong> — adres email, hasło (przechowywane wyłącznie w postaci
+                zaszyfrowanej) oraz zapisane kryteria wyszukiwania i znalezione oferty. Przetwarzamy je, aby świadczyć
+                usługę monitorowania ofert i wysyłać powiadomienia (art. 6 ust. 1 lit. b RODO — wykonanie umowy).</p>
+            <p><strong>Dane techniczne</strong> — adres IP osoby wysyłającej formularz kontaktowy, przechowywany przez
+                1 godzinę wyłącznie w celu ochrony przed spamem (limit liczby wiadomości), oraz standardowe logi serwera
+                służące bezpieczeństwu (art. 6 ust. 1 lit. f RODO).</p>
+        </section>
+
+        <section>
+            <h2>3. Jak długo przechowujemy dane</h2>
+            <ul>
+                <li>Wiadomości z formularza — przez czas prowadzenia korespondencji, a następnie do upływu okresu
+                    przedawnienia ewentualnych roszczeń.</li>
+                <li>Dane konta Gratka Alerts — do czasu usunięcia konta. Konto możesz usunąć, pisząc na adres kontaktowy.</li>
+                <li>Adres IP na potrzeby limitu wiadomości — 1 godzina.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Komu przekazujemy dane</h2>
+            <p class="mb-3">Nie sprzedajemy danych i nie przekazujemy ich w celach marketingowych. Dostęp do nich mogą mieć
+                wyłącznie dostawcy usług technicznych, z których korzystamy:</p>
+            <ul>
+                <li><strong>Hostinger</strong> — serwer (VPS), na którym działa serwis i baza danych,</li>
+                <li><strong>Google</strong> (Gmail) — wysyłka wiadomości email, w tym powiadomień i odpowiedzi na zapytania.</li>
+            </ul>
+            <p class="mt-3">W przypadku Google dane mogą być przetwarzane poza Europejskim Obszarem Gospodarczym —
+                na podstawie standardowych klauzul umownych zatwierdzonych przez Komisję Europejską.</p>
+        </section>
+
+        <section>
+            <h2>5. Pliki cookies</h2>
+            <p>Serwis używa wyłącznie niezbędnych plików cookies: zabezpieczenia formularzy (<code class="text-gray-300">csrftoken</code>)
+                oraz utrzymania sesji po zalogowaniu do Gratka Alerts (<code class="text-gray-300">sessionid</code>).
+                Nie używamy cookies analitycznych, reklamowych ani śledzących, dlatego nie wymagamy zgody na cookies.</p>
+        </section>
+
+        <section>
+            <h2>6. Twoje prawa</h2>
+            <p class="mb-3">Masz prawo do:</p>
+            <ul>
+                <li>dostępu do swoich danych i otrzymania ich kopii,</li>
+                <li>sprostowania danych,</li>
+                <li>usunięcia danych,</li>
+                <li>ograniczenia przetwarzania,</li>
+                <li>przenoszenia danych,</li>
+                <li>sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie.</li>
+            </ul>
+            <p class="mt-3">Aby skorzystać z tych praw, napisz na <a href="mailto:kontakt@nexuslab.pl">kontakt@nexuslab.pl</a>.
+                Masz też prawo wnieść skargę do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa).</p>
+        </section>
+
+        <section>
+            <h2>7. Dobrowolność podania danych</h2>
+            <p>Podanie danych jest dobrowolne, ale bez adresu email nie możemy odpowiedzieć na wiadomość,
+                a bez danych konta — świadczyć usługi Gratka Alerts.</p>
+        </section>
+    </div>
+</article>
+{% endblock %}

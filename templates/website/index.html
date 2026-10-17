@@ -143,8 +143,62 @@
     </div>
 </section>
 
+<!-- Automatyzacje n8n -->
+<section id="automatyzacje" class="py-16 sm:py-24 bg-navy-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center">Automatyzacje n8n</h2>
+        <p class="mt-4 text-center text-gray-400 max-w-2xl mx-auto">
+            Workflow, które łączą AI, telefonię, arkusze i komunikatory w jeden proces bez ręcznej pracy.
+        </p>
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <!-- Sekretarka farmaceuty -->
+            <article class="flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+                <div class="flex items-center justify-between gap-4">
+                    <h3 class="text-2xl font-bold">Sekretarka farmaceuty</h3>
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">n8n · AI voice</span>
+                </div>
+                <p class="mt-4 text-gray-400">
+                    Obsługa połączeń dla apteki: asystent głosowy AI odbiera telefon, a workflow zapisuje
+                    każdą rozmowę w Google Sheets i — gdy trzeba oddzwonić — wysyła farmaceucie SMS
+                    z nazwiskiem, numerem i sprawą dzwoniącego.
+                </p>
+
+                <!-- Flow -->
+                <ol class="mt-6 flex flex-wrap items-center gap-2 text-xs">
+                    <li class="px-2.5 py-1 rounded-md bg-gold-500/15 text-gold-400">Webhook</li>
+                    <li class="text-gray-500" aria-hidden="true">→</li>
+                    <li class="px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Walidacja</li>
+                    <li class="text-gray-500" aria-hidden="true">→</li>
+                    <li class="px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Deduplikacja</li>
+                    <li class="text-gray-500" aria-hidden="true">→</li>
+                    <li class="px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Google Sheets</li>
+                    <li class="text-gray-500" aria-hidden="true">→</li>
+                    <li class="px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Oddzwonić?</li>
+                    <li class="text-gray-500" aria-hidden="true">→</li>
+                    <li class="px-2.5 py-1 rounded-md bg-gold-500/15 text-gold-400">SMS (Twilio)</li>
+                </ol>
+
+                <ul class="mt-6 space-y-2 text-sm text-gray-400">
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Walidacja i normalizacja danych z rozmowy (telefon, temat, podsumowanie)</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Idempotencja — ponowne wywołanie tej samej rozmowy nie dubluje wpisów ani SMS-ów</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> SMS w jednym segmencie GSM-7 (160 znaków) — niższy koszt wysyłki</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Status wysyłki SMS (wysłany / błąd) zapisywany w arkuszu</li>
+                </ul>
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">n8n</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Twilio</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Google Sheets</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">JavaScript</span>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
 <!-- Czym się zajmuję -->
-<section id="uslugi" class="py-16 sm:py-24 bg-navy-800/50">
+<section id="uslugi" class="py-16 sm:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center">Czym się zajmuję</h2>
         <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">

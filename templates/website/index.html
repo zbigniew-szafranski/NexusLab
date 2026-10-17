@@ -193,6 +193,45 @@
                 </div>
             </article>
 
+            <!-- Asystent wydatków -->
+            <article class="flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+                <div class="flex items-center justify-between gap-4">
+                    <h3 class="text-2xl font-bold">Asystent wydatków</h3>
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">n8n · Telegram bot</span>
+                </div>
+                <p class="mt-4 text-gray-400">
+                    Bot na Telegramie, który prowadzi ewidencję wydatków bez ręcznego wpisywania.
+                    Wystarczy nagrać głosówkę, wysłać zdjęcie paragonu albo napisać zwykłą wiadomość —
+                    AI wyciąga kwotę, sklep i kategorię, zapisuje wydatek w Google Sheets i potwierdza na czacie.
+                </p>
+
+                <!-- Flow -->
+                <ol class="mt-6 flex flex-wrap items-center gap-2 text-xs">
+                    <li class="px-2.5 py-1 rounded-md bg-gold-500/15 text-gold-400">Telegram</li>
+                    <li class="text-gray-500" aria-hidden="true">→</li>
+                    <li class="px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Głos / zdjęcie / tekst</li>
+                    <li class="text-gray-500" aria-hidden="true">→</li>
+                    <li class="px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Whisper / GPT Vision</li>
+                    <li class="text-gray-500" aria-hidden="true">→</li>
+                    <li class="px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">GPT-4o-mini → JSON</li>
+                    <li class="text-gray-500" aria-hidden="true">→</li>
+                    <li class="px-2.5 py-1 rounded-md bg-gold-500/15 text-gold-400">Google Sheets</li>
+                </ol>
+
+                <ul class="mt-6 space-y-2 text-sm text-gray-400">
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Notatki głosowe transkrybowane przez Whisper i zamieniane na wpis</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Odczyt paragonów i faktur ze zdjęcia: sklep, kwota, data</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Kategorie klienta trzymane w arkuszu — AI dopasowuje wydatek, a nowe kategorie dodaje się wiadomością</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Komendy z podsumowaniem: suma i liczba wpisów w danej kategorii</li>
+                </ul>
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">n8n</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Telegram Bot API</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">OpenAI (GPT-4o-mini, Whisper)</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Google Sheets</span>
+                </div>
+            </article>
+
         </div>
     </div>
 </section>

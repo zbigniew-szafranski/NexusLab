@@ -184,6 +184,15 @@
 
             <!-- Gratka Alerts -->
             <article class="reveal flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+                <a href="https://gratka.nexuslab.pl" target="_blank" rel="noopener"
+                   class="block mb-6 overflow-hidden rounded-xl border border-navy-600/50 hover:border-gold-500/40 transition">
+                    <picture>
+                        <source srcset="{% static 'img/gratka.webp' %}" type="image/webp">
+                        <img src="{% static 'img/gratka.jpg' %}" width="960" height="532" loading="lazy"
+                             alt="Panel Gratka Alerts: kryteria wyszukiwania, aktywna konfiguracja i lista znalezionych ofert"
+                             class="w-full h-auto">
+                    </picture>
+                </a>
                 <div class="flex items-center justify-between gap-4">
                     <h3 class="text-2xl font-bold">Gratka Alerts</h3>
                     <span class="shrink-0 whitespace-nowrap text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">SaaS</span>
@@ -220,6 +229,12 @@
 
             <!-- sprzedajm.pl -->
             <article class="reveal flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+                <a href="https://sprzedajm.pl/" target="_blank" rel="noopener"
+                   class="block mb-6 overflow-hidden rounded-xl border border-navy-600/50 hover:border-gold-500/40 transition">
+                    <video class="w-full h-auto block" width="960" height="600" muted loop playsinline preload="none"
+                           poster="{% static 'img/sprzedajm.jpg' %}" data-lazy-src="{% static 'img/sprzedajm.mp4' %}"
+                           aria-label="Przewijanie strony sprzedajm.pl: od nagłówka przez sekcje oferty po quiz wyceny"></video>
+                </a>
                 <div class="flex items-center justify-between gap-4">
                     <h3 class="text-2xl font-bold">sprzedajm.pl</h3>
                     <span class="shrink-0 whitespace-nowrap text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">Lejek sprzedażowy</span>
@@ -556,4 +571,28 @@
     </div>
 </section>
 
+{% endblock %}
+
+{% block extra_body %}
+<script>
+    // Load portfolio videos only when they scroll into view; skip autoplay for reduced motion
+    (function () {
+        var videos = document.querySelectorAll('video[data-lazy-src]');
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduceMotion || !('IntersectionObserver' in window)) return;
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                var video = entry.target;
+                if (entry.isIntersecting) {
+                    if (!video.src) video.src = video.dataset.lazySrc;
+                    video.play().catch(function () {});
+                } else if (video.src) {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.25 });
+        videos.forEach(function (v) { observer.observe(v); });
+    })();
+</script>
 {% endblock %}

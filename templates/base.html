@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block head_title %}NexusLab{% endblock %}</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/favicon.svg' %}" type="image/svg+xml">
     {% block meta %}{% endblock %}
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -84,7 +86,19 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center space-x-8">
-                    <a href="https://nexuslab.pl" class="text-xl font-bold">Nexus<span class="text-gold-500">Lab</span></a>
+                    <a href="https://nexuslab.pl" class="flex items-center gap-2.5" aria-label="NexusLab — strona główna">
+                        <svg class="h-8 w-8 shrink-0" viewBox="0 0 32 32" aria-hidden="true">
+                            <g fill="none" stroke="#b4b9b7" stroke-width="1.4">
+                                <ellipse cx="16" cy="16" rx="13" ry="5"/>
+                                <ellipse cx="16" cy="16" rx="13" ry="5" transform="rotate(60 16 16)"/>
+                                <ellipse cx="16" cy="16" rx="13" ry="5" transform="rotate(120 16 16)"/>
+                            </g>
+                            <circle cx="16" cy="16" r="2.6" fill="#e0501e"/>
+                        </svg>
+                        <span class="text-2xl leading-none tracking-tight">
+                            <span class="italic text-white" style="font-family: 'Times New Roman', Tinos, Georgia, serif;">Nexus</span><span class="font-medium" style="color: #e0501e; font-family: Arial, Helvetica, sans-serif;">Lab</span>
+                        </span>
+                    </a>
                     {% if request.get_host|slice:":7" == "gratka." %}
                     <a href="https://nexuslab.pl/cennik/"
                        class="text-sm text-gray-400 hover:text-gold-500 transition">Cennik</a>

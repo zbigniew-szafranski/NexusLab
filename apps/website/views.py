@@ -1,9 +1,11 @@
+import json
 import logging
 
 from django.conf import settings
 from django.core.cache import cache
 from django.core.mail import EmailMessage
 from django.shortcuts import render
+from django.utils.safestring import mark_safe
 from django.views.decorators.http import require_POST
 
 from apps.subscriptions.models import Plan
@@ -15,8 +17,61 @@ logger = logging.getLogger(__name__)
 CONTACT_RATE_LIMIT = 5  # submissions per IP per hour
 
 
+FAQ = [
+    {
+        'q': 'Ile trwa wdrożenie?',
+        'a': 'Prosta automatyzacja, np. bot na Telegramie albo workflow w n8n, to zwykle kilka dni. '
+             'Aplikacja z panelem i kontami użytkowników to kilka tygodni. Dokładny termin podaję '
+             'w wycenie, po rozmowie.',
+    },
+    {
+        'q': 'Ile to kosztuje?',
+        'a': 'Zależy od zakresu — dlatego zaczynamy od bezpłatnej rozmowy. Po niej dostajesz '
+             'konkretną wycenę za cały projekt, bez niespodzianek w trakcie.',
+    },
+    {
+        'q': 'Kto płaci za AI, SMS-y i serwer?',
+        'a': 'Usługi takie jak OpenAI, Claude czy Twilio rozliczane są według zużycia, zwykle na '
+             'Twoim koncie — masz pełną kontrolę nad kosztami. Przy prostych automatyzacjach to '
+             'często kilka–kilkanaście złotych miesięcznie. Szacunek kosztów stałych jest częścią wyceny.',
+    },
+    {
+        'q': 'Muszę znać się na technologii?',
+        'a': 'Nie. Rozwiązanie działa w narzędziach, których już używasz — mailu, Telegramie, '
+             'arkuszu Google czy telefonie. Pokazuję, jak z niego korzystać, i zostawiam krótką instrukcję.',
+    },
+    {
+        'q': 'Co jeśli coś przestanie działać?',
+        'a': 'Monitoruję wdrożone automatyzacje i naprawiam błędy. Gdy zmieni się np. strona, z której '
+             'pobierane są dane, albo API dostawcy, dostosowuję rozwiązanie.',
+    },
+    {
+        'q': 'Czy pracujesz zdalnie?',
+        'a': 'Tak — rozmowy, wdrożenie i wsparcie prowadzę zdalnie, dla klientów z całej Polski.',
+    },
+]
+
+
+def _faq_schema():
+    schema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': [
+            {'@type': 'Question', 'name': item['q'],
+             'acceptedAnswer': {'@type': 'Answer', 'text': item['a']}}
+            for item in FAQ
+        ],
+    }
+    # Escape "<" so the JSON can't close the surrounding <script> tag
+    return mark_safe(json.dumps(schema, ensure_ascii=False).replace('<', '\\u003c'))
+
+
 def home(request):
-    return render(request, 'website/index.html', {'contact_form': ContactForm()})
+    return render(request, 'website/index.html', {
+        'contact_form': ContactForm(),
+        'faq': FAQ,
+        'faq_schema': _faq_schema(),
+    })
 
 
 def pricing(request):

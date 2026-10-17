@@ -232,6 +232,46 @@
                 </div>
             </article>
 
+            <!-- Lista zakupów -->
+            <article class="flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+                <div class="flex items-center justify-between gap-4">
+                    <h3 class="text-2xl font-bold">Lista zakupów</h3>
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">n8n · Telegram bot</span>
+                </div>
+                <p class="mt-4 text-gray-400">
+                    Wspólna lista zakupów dla domowników, obsługiwana z Telegrama — tekstem albo głosem.
+                    „Dodaj mleko, chleb i masło” tworzy trzy pozycje w Google Tasks, a admin
+                    od razu dostaje powiadomienie, kto i co dopisał do listy.
+                </p>
+
+                <!-- Flow -->
+                <ol class="mt-6 flex flex-wrap items-center gap-2 text-xs">
+                    <li class="px-2.5 py-1 rounded-md bg-gold-500/15 text-gold-400">Telegram</li>
+                    <li class="text-gray-500" aria-hidden="true">→</li>
+                    <li class="px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Autoryzacja</li>
+                    <li class="text-gray-500" aria-hidden="true">→</li>
+                    <li class="px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Whisper</li>
+                    <li class="text-gray-500" aria-hidden="true">→</li>
+                    <li class="px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Router komend</li>
+                    <li class="text-gray-500" aria-hidden="true">→</li>
+                    <li class="px-2.5 py-1 rounded-md bg-gold-500/15 text-gold-400">Google Tasks</li>
+                </ol>
+
+                <ul class="mt-6 space-y-2 text-sm text-gray-400">
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Komendy tekstowe i głosowe: dodaj, lista, kupione, usuń, ile, wyczyść, pomoc</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Kilka produktów w jednej wiadomości — rozbijane na osobne pozycje</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Dostęp tylko dla autoryzowanych użytkowników (whitelista w Google Sheets)</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Cotygodniowe przypomnienie do wszystkich: co jeszcze zostało do kupienia</li>
+                </ul>
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">n8n</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Telegram Bot API</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">OpenAI Whisper</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Google Tasks</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Google Sheets</span>
+                </div>
+            </article>
+
         </div>
     </div>
 </section>

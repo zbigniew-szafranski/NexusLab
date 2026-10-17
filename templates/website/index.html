@@ -307,8 +307,8 @@
         <div class="mt-12 grid grid-cols-1 gap-8">
 
             <!-- Sekretarka farmaceuty -->
-            <article class="reveal grid grid-cols-1 md:grid-cols-2 gap-x-12 bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
-                <div>
+            <article class="reveal grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 items-center bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+                <div class="md:col-span-3 flex flex-col">
                 <div class="flex items-center justify-between gap-4">
                     <h3 class="text-2xl font-bold">Sekretarka farmaceuty</h3>
                     <span class="shrink-0 whitespace-nowrap text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">n8n · AI voice</span>
@@ -333,10 +333,8 @@
                     <li class="text-gray-500" aria-hidden="true">→</li>
                     <li class="px-2.5 py-1 rounded-md bg-gold-500/15 text-gold-400">SMS (Twilio)</li>
                 </ol>
-                </div>
 
-                <div>
-                <ul class="mt-6 md:mt-0 space-y-2 text-sm text-gray-400">
+                <ul class="mt-6 space-y-2 text-sm text-gray-400">
                     <li class="flex gap-2"><span class="text-gold-500">✓</span> Walidacja i normalizacja danych z rozmowy (telefon, temat, podsumowanie)</li>
                     <li class="flex gap-2"><span class="text-gold-500">✓</span> Idempotencja — ponowne wywołanie tej samej rozmowy nie dubluje wpisów ani SMS-ów</li>
                     <li class="flex gap-2"><span class="text-gold-500">✓</span> SMS w jednym segmencie GSM-7 (160 znaków) — niższy koszt wysyłki</li>
@@ -348,6 +346,11 @@
                     <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Google Sheets</span>
                     <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">JavaScript</span>
                 </div>
+                </div>
+                <div class="md:col-span-2 flex justify-center">
+                    <img src="{% static 'img/sekretarka.webp' %}" width="619" height="1257" loading="lazy"
+                         alt="SMS-y od sekretarki AI na iPhonie: „Oddzwoń” z imieniem dzwoniącego i sprawą, np. dostępność leku"
+                         class="w-full max-w-[280px] h-auto drop-shadow-2xl">
                 </div>
             </article>
 

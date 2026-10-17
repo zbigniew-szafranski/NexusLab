@@ -52,6 +52,24 @@ FAQ = [
 ]
 
 
+# Quoted from the Flowmail landing page (panelgw.com)
+TESTIMONIALS = [
+    {
+        'quote': 'Ta aplikacja jest po prostu rewelacyjna: wszystkie potrzebne informacje w jednym '
+                 'miejscu, generowanie maili nieprawdopodobnie usprawnione, a oszczędność czasu — '
+                 'bezcenna. Szczerze polecam i dziękuję, bo już widzę, jak bardzo mi to pomoże.',
+        'name': 'Agnieszka',
+        'role': 'Doradczyni Green Ways · użytkowniczka Flowmail',
+    },
+    {
+        'quote': 'Polecam wszystkim, aplikacja jest super ułatwieniem pracy. Dziękuję za możliwość '
+                 'korzystania z niej.',
+        'name': 'Danuta',
+        'role': 'Doradczyni Green Ways · użytkowniczka Flowmail',
+    },
+]
+
+
 def _faq_schema():
     schema = {
         '@context': 'https://schema.org',
@@ -71,6 +89,7 @@ def home(request):
         'contact_form': ContactForm(),
         'faq': FAQ,
         'faq_schema': _faq_schema(),
+        'testimonials': TESTIMONIALS,
     })
 
 

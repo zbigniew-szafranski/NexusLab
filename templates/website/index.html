@@ -134,9 +134,18 @@
 
             <!-- Flowmail -->
             <article class="reveal flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+                <a href="https://panelgw.com/" target="_blank" rel="noopener"
+                   class="block mb-6 overflow-hidden rounded-xl border border-navy-600/50 hover:border-gold-500/40 transition">
+                    <picture>
+                        <source srcset="{% static 'img/flowmail.webp' %}" type="image/webp">
+                        <img src="{% static 'img/flowmail.jpg' %}" width="960" height="600" loading="lazy"
+                             alt="Strona główna Flowmail: „30 sekund. Mail gotowy. Reszta dnia — Twoja.”"
+                             class="w-full h-auto">
+                    </picture>
+                </a>
                 <div class="flex items-center justify-between gap-4">
                     <h3 class="text-2xl font-bold">Flowmail</h3>
-                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">SaaS · AI</span>
+                    <span class="shrink-0 whitespace-nowrap text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">SaaS · AI</span>
                 </div>
                 <p class="mt-4 text-gray-400">
                     Asystent AI i CRM dla doradców sprzedaży. Z krótkiej notatki (także głosowej) generuje
@@ -170,7 +179,7 @@
             <article class="reveal flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
                 <div class="flex items-center justify-between gap-4">
                     <h3 class="text-2xl font-bold">Gratka Alerts</h3>
-                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">SaaS</span>
+                    <span class="shrink-0 whitespace-nowrap text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">SaaS</span>
                 </div>
                 <p class="mt-4 text-gray-400">
                     Wielodostępowy system monitorowania ofert nieruchomości. Użytkownik ustawia kryteria
@@ -206,7 +215,7 @@
             <article class="reveal flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
                 <div class="flex items-center justify-between gap-4">
                     <h3 class="text-2xl font-bold">sprzedajm.pl</h3>
-                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">Lejek sprzedażowy</span>
+                    <span class="shrink-0 whitespace-nowrap text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">Lejek sprzedażowy</span>
                 </div>
                 <p class="mt-4 text-gray-400">
                     Jednostronicowy lejek generujący leady dla N Inwestycje — łódzkiej firmy skupującej
@@ -239,20 +248,48 @@
     </div>
 </section>
 
+<!-- Opinie -->
+<section id="opinie" class="py-16 sm:py-24 bg-navy-800/50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center">Co mówią użytkownicy</h2>
+        <p class="mt-4 text-center text-gray-400 max-w-2xl mx-auto">
+            Opinie doradczyń, które na co dzień pracują z Flowmail.
+        </p>
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+            {% for t in testimonials %}
+            <figure class="reveal flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+                <div class="text-gold-500 text-lg tracking-widest" aria-label="5 na 5 gwiazdek">★★★★★</div>
+                <blockquote class="mt-4 flex-1 text-gray-300 leading-relaxed">
+                    „{{ t.quote }}”
+                </blockquote>
+                <figcaption class="mt-6 flex items-center gap-3">
+                    <span class="flex items-center justify-center h-11 w-11 rounded-full bg-gold-500/15 text-gold-400 font-bold">{{ t.name|first }}</span>
+                    <span>
+                        <span class="block font-semibold">{{ t.name }}</span>
+                        <span class="block text-sm text-gray-500">{{ t.role }}</span>
+                    </span>
+                </figcaption>
+            </figure>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 <!-- Automatyzacje n8n -->
-<section id="automatyzacje" class="py-16 sm:py-24 bg-navy-800/50">
+<section id="automatyzacje" class="py-16 sm:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center">Automatyzacje n8n</h2>
         <p class="mt-4 text-center text-gray-400 max-w-2xl mx-auto">
             Workflow, które łączą AI, telefonię, arkusze i komunikatory w jeden proces bez ręcznej pracy.
         </p>
-        <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="mt-12 grid grid-cols-1 gap-8">
 
             <!-- Sekretarka farmaceuty -->
-            <article class="reveal flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+            <article class="reveal grid grid-cols-1 md:grid-cols-2 gap-x-12 bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+                <div>
                 <div class="flex items-center justify-between gap-4">
                     <h3 class="text-2xl font-bold">Sekretarka farmaceuty</h3>
-                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">n8n · AI voice</span>
+                    <span class="shrink-0 whitespace-nowrap text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">n8n · AI voice</span>
                 </div>
                 <p class="mt-4 text-gray-400">
                     Obsługa połączeń dla apteki: asystent głosowy AI odbiera telefon, a workflow zapisuje
@@ -274,8 +311,10 @@
                     <li class="text-gray-500" aria-hidden="true">→</li>
                     <li class="px-2.5 py-1 rounded-md bg-gold-500/15 text-gold-400">SMS (Twilio)</li>
                 </ol>
+                </div>
 
-                <ul class="mt-6 space-y-2 text-sm text-gray-400">
+                <div>
+                <ul class="mt-6 md:mt-0 space-y-2 text-sm text-gray-400">
                     <li class="flex gap-2"><span class="text-gold-500">✓</span> Walidacja i normalizacja danych z rozmowy (telefon, temat, podsumowanie)</li>
                     <li class="flex gap-2"><span class="text-gold-500">✓</span> Idempotencja — ponowne wywołanie tej samej rozmowy nie dubluje wpisów ani SMS-ów</li>
                     <li class="flex gap-2"><span class="text-gold-500">✓</span> SMS w jednym segmencie GSM-7 (160 znaków) — niższy koszt wysyłki</li>
@@ -287,13 +326,15 @@
                     <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Google Sheets</span>
                     <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">JavaScript</span>
                 </div>
+                </div>
             </article>
 
             <!-- Asystent wydatków -->
-            <article class="reveal flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+            <article class="reveal grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 items-center bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+                <div class="md:col-span-3 flex flex-col">
                 <div class="flex items-center justify-between gap-4">
                     <h3 class="text-2xl font-bold">Asystent wydatków</h3>
-                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">n8n · Telegram bot</span>
+                    <span class="shrink-0 whitespace-nowrap text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">n8n · Telegram bot</span>
                 </div>
                 <p class="mt-4 text-gray-400">
                     Bot na Telegramie, który prowadzi ewidencję wydatków bez ręcznego wpisywania.
@@ -326,13 +367,20 @@
                     <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">OpenAI (GPT-4o-mini, Whisper)</span>
                     <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Google Sheets</span>
                 </div>
+                </div>
+                <div class="md:col-span-2 md:order-first flex justify-center">
+                    <img src="{% static 'img/asystent-wydatkow.webp' %}" width="618" height="1087" loading="lazy"
+                         alt="Rozmowa z botem wydatków na Telegramie: głosówki zapisane jako wydatki, wpis tekstem i dodanie nowej kategorii"
+                         class="w-full max-w-[280px] h-auto drop-shadow-2xl">
+                </div>
             </article>
 
             <!-- Lista zakupów -->
-            <article class="reveal flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+            <article class="reveal grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 items-center bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+                <div class="md:col-span-3 flex flex-col">
                 <div class="flex items-center justify-between gap-4">
                     <h3 class="text-2xl font-bold">Lista zakupów</h3>
-                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">n8n · Telegram bot</span>
+                    <span class="shrink-0 whitespace-nowrap text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">n8n · Telegram bot</span>
                 </div>
                 <p class="mt-4 text-gray-400">
                     Wspólna lista zakupów dla domowników, obsługiwana z Telegrama — tekstem albo głosem.
@@ -366,6 +414,12 @@
                     <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Google Tasks</span>
                     <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Google Sheets</span>
                 </div>
+                </div>
+                <div class="md:col-span-2 flex justify-center">
+                    <img src="{% static 'img/lista-zakupow.webp' %}" width="618" height="1087" loading="lazy"
+                         alt="Rozmowa z botem listy zakupów na Telegramie: dodawanie produktu, lista i komendy pomocy"
+                         class="w-full max-w-[280px] h-auto drop-shadow-2xl">
+                </div>
             </article>
 
         </div>
@@ -373,7 +427,7 @@
 </section>
 
 <!-- Czym się zajmuję -->
-<section id="uslugi" class="py-16 sm:py-24">
+<section id="uslugi" class="py-16 sm:py-24 bg-navy-800/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center">Czym się zajmuję</h2>
         <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -400,7 +454,7 @@
 </section>
 
 <!-- Jak wygląda współpraca -->
-<section id="wspolpraca" class="py-16 sm:py-24 bg-navy-800/50">
+<section id="wspolpraca" class="py-16 sm:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center">Jak wygląda współpraca</h2>
         <p class="mt-4 text-center text-gray-400 max-w-2xl mx-auto">
@@ -440,7 +494,7 @@
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="py-16 sm:py-24">
+<section id="faq" class="py-16 sm:py-24 bg-navy-800/50">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center">Najczęstsze pytania</h2>
         <div class="mt-12 space-y-4">
@@ -459,7 +513,7 @@
 </section>
 
 <!-- Kontakt -->
-<section id="kontakt" class="py-16 sm:py-24 bg-navy-800/50">
+<section id="kontakt" class="py-16 sm:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl font-bold">Kontakt</h2>
         <p class="mt-4 text-gray-400">

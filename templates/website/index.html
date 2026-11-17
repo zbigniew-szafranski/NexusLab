@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block head_title %}NexusLab — Automatyzacje n8n, AI i aplikacje webowe | Zbigniew Szafrański{% endblock %}
+{% block head_title %}NexusLab: automatyzacje n8n, AI i aplikacje webowe | Zbigniew Szafrański{% endblock %}
 
 {% block meta %}
-    {% with title="NexusLab — Automatyzacje i AI, które oszczędzają czas" description="Automatyzacje n8n, integracje AI (Claude, OpenAI) i aplikacje w Django. Boty Telegram, asystenci głosowi, CRM i SaaS — od rozmowy do wdrożenia. Zbigniew Szafrański." %}
+    {% with title="NexusLab: automatyzacje i AI, które oszczędzają czas" description="Automatyzacje n8n, integracje AI (Claude, OpenAI) i aplikacje w Django. Boty Telegram, asystenci głosowi, CRM i SaaS: od rozmowy do wdrożenia. Zbigniew Szafrański." %}
     <meta name="description" content="{{ description }}">
     <link rel="canonical" href="https://nexuslab.pl/">
     <meta property="og:type" content="website">
@@ -16,7 +16,7 @@
     <meta property="og:image" content="https://nexuslab.pl{% static 'img/og-image.jpg' %}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="NexusLab — Zbigniew Szafrański, automatyzacje i AI">
+    <meta property="og:image:alt" content="NexusLab, Zbigniew Szafrański: automatyzacje i AI">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ title }}">
     <meta name="twitter:description" content="{{ description }}">
@@ -59,7 +59,7 @@
         </h1>
         <p class="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-gray-400">
             Boty, asystenci AI i aplikacje, które same piszą maile, odczytują paragony,
-            odbierają telefony i pilnują ofert — a Ty zajmujesz się tym, co ważne.
+            odbierają telefony i pilnują ofert, a Ty zajmujesz się swoją pracą.
         </p>
         <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <a href="#kontakt"
@@ -71,9 +71,6 @@
                 Zobacz projekty
             </a>
         </div>
-        <p class="mt-8 text-sm text-gray-500">
-            n8n · Django · Claude API · OpenAI · Telegram · Google Workspace · Twilio
-        </p>
     </div>
 </section>
 
@@ -92,22 +89,45 @@
             <div class="md:col-span-3">
                 <p class="text-sm uppercase tracking-wider text-gold-500">O mnie</p>
                 <h2 class="mt-2 text-3xl font-bold">Zbigniew Szafrański</h2>
-                <div class="mt-6 space-y-4 text-gray-400">
-                    <p>
-                        Buduję automatyzacje i aplikacje, które zdejmują z ludzi powtarzalną pracę.
-                        Zaczynam od rozmowy o tym, co zajmuje najwięcej czasu, a kończę na działającym
-                        narzędziu — wdrożonym, utrzymywanym i używanym na co dzień.
-                    </p>
-                    <p>
-                        Łączę workflow w n8n, aplikacje w Django i modele AI (Claude, OpenAI) z tym,
-                        czego firmy już używają: mailem, Telegramem, Google Sheets, SMS-ami i telefonem.
-                        Pracowałem dla branży nieruchomości, doradców sprzedaży i aptek.
-                    </p>
-                    <p>
-                        Stawiam na rozwiązania proste w obsłudze: klient wysyła głosówkę, zdjęcie albo
-                        wypełnia krótki formularz — resztę robi system.
-                    </p>
-                </div>
+                <p class="mt-6 text-lg text-gray-300">
+                    Pomagam odzyskać czas, który dziś idzie na przepisywanie danych, odpisywanie na podobne
+                    wiadomości i pilnowanie terminów. Najpierw rozmawiamy o tym, co zabiera Ci najwięcej godzin.
+                    Potem buduję narzędzie, które robi to za Ciebie.
+                </p>
+                <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5">
+                    <li class="flex gap-3">
+                        <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold-500/10 text-gold-500" aria-hidden="true">
+                            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                        </span>
+                        <div><p class="font-semibold text-white">Więcej czasu</p>
+                            <p class="text-sm text-gray-400">Rzeczy, które dziś robisz ręcznie, dzieją się same.</p></div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold-500/10 text-gold-500" aria-hidden="true">
+                            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M17 7.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2.2 2.7 5 3.5 5 1.6 5 3.5-2.2 3-5 3-5-1.1-5-3"/></svg>
+                        </span>
+                        <div><p class="font-semibold text-white">Niższe koszty</p>
+                            <p class="text-sm text-gray-400">Płacisz za rozwiązanie, a nie za kolejne godziny ręcznej pracy.</p></div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold-500/10 text-gold-500" aria-hidden="true">
+                            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+                        </span>
+                        <div><p class="font-semibold text-white">Mniej pomyłek</p>
+                            <p class="text-sm text-gray-400">System nie zapomina o terminach i nie myli się przy przepisywaniu.</p></div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold-500/10 text-gold-500" aria-hidden="true">
+                            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18h2"/></svg>
+                        </span>
+                        <div><p class="font-semibold text-white">Proste w obsłudze</p>
+                            <p class="text-sm text-gray-400">Wystarczy głosówka, zdjęcie albo krótki formularz w telefonie. Nie trzeba się niczego uczyć.</p></div>
+                    </li>
+                </ul>
+                <p class="mt-8 text-gray-400">
+                    Rozwiązanie dopasowuję do tego, jak już pracujesz, wdrażam je i pilnuję, żeby działało.
+                    Robiłem projekty m.in. dla branży nieruchomości, doradców sprzedaży i aptek.
+                </p>
                 <div class="mt-8 flex flex-col sm:flex-row gap-3">
                     <a href="#kontakt"
                        class="inline-flex items-center justify-center whitespace-nowrap px-6 py-3 bg-gold-500 text-navy-900 font-bold rounded-full hover:bg-gold-400 transition">
@@ -135,7 +155,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center">Projekty</h2>
         <p class="mt-4 text-center text-gray-400 max-w-2xl mx-auto">
-            Wybrane realizacje — od produktów używanych na co dzień po projekty w trakcie wdrożenia.
+            Wybrane realizacje: produkty używane na co dzień i projekty w trakcie wdrożenia.
         </p>
         <div class="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
 
@@ -156,7 +176,7 @@
                 </div>
                 <p class="mt-4 text-gray-400">
                     Asystent AI i CRM dla doradców sprzedaży. Z krótkiej notatki (także głosowej) generuje
-                    spersonalizowany mail w ~30 sekund — na podstawie historii klienta i bazy 3 700+
+                    spersonalizowany mail w ok. 30 sekund, na podstawie historii klienta i ponad 3 700
                     materiałów branżowych. Drugi model AI weryfikuje treść, doradca zatwierdza i wysyła
                     ze swojego adresu.
                 </p>
@@ -252,7 +272,7 @@
                     <span class="shrink-0 whitespace-nowrap text-xs font-semibold px-3 py-1 rounded-full bg-sky-500/15 text-sky-300">W trakcie wdrożenia</span>
                 </div>
                 <p class="mt-4 text-gray-400">
-                    Jednostronicowy lejek generujący leady dla N Inwestycje — łódzkiej firmy skupującej
+                    Jednostronicowy lejek generujący leady dla N Inwestycje, łódzkiej firmy skupującej
                     nieruchomości za gotówkę i prowadzącej pośrednictwo. Każda sekcja, od problemu
                     sprzedającego po FAQ, prowadzi do 3-krokowego quizu wyceny, a zgłoszenie trafia
                     mailem do handlowca razem z informacją, którą ścieżkę wybrał klient.
@@ -328,7 +348,7 @@
                 </div>
                 <p class="mt-4 text-gray-400">
                     Obsługa połączeń dla apteki: asystent głosowy AI odbiera telefon, a workflow zapisuje
-                    każdą rozmowę w Google Sheets i — gdy trzeba oddzwonić — wysyła farmaceucie SMS
+                    każdą rozmowę w Google Sheets, a gdy trzeba oddzwonić, wysyła farmaceucie SMS
                     z nazwiskiem, numerem i sprawą dzwoniącego.
                 </p>
 
@@ -349,8 +369,8 @@
 
                 <ul class="mt-6 space-y-2 text-sm text-gray-400">
                     <li class="flex gap-2"><span class="text-gold-500">✓</span> Walidacja i normalizacja danych z rozmowy (telefon, temat, podsumowanie)</li>
-                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Idempotencja — ponowne wywołanie tej samej rozmowy nie dubluje wpisów ani SMS-ów</li>
-                    <li class="flex gap-2"><span class="text-gold-500">✓</span> SMS w jednym segmencie GSM-7 (160 znaków) — niższy koszt wysyłki</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Idempotencja: ponowne wywołanie tej samej rozmowy nie dubluje wpisów ani SMS-ów</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> SMS w jednym segmencie GSM-7 (160 znaków), czyli niższy koszt wysyłki</li>
                     <li class="flex gap-2"><span class="text-gold-500">✓</span> Status wysyłki SMS (wysłany / błąd) zapisywany w arkuszu</li>
                 </ul>
                 <div class="mt-6 flex flex-wrap gap-2">
@@ -376,7 +396,7 @@
                 </div>
                 <p class="mt-4 text-gray-400">
                     Bot na Telegramie, który prowadzi ewidencję wydatków bez ręcznego wpisywania.
-                    Wystarczy nagrać głosówkę, wysłać zdjęcie paragonu albo napisać zwykłą wiadomość —
+                    Wystarczy nagrać głosówkę, wysłać zdjęcie paragonu albo napisać zwykłą wiadomość.
                     AI wyciąga kwotę, sklep i kategorię, zapisuje wydatek w Google Sheets i potwierdza na czacie.
                 </p>
 
@@ -396,7 +416,7 @@
                 <ul class="mt-6 space-y-2 text-sm text-gray-400">
                     <li class="flex gap-2"><span class="text-gold-500">✓</span> Notatki głosowe transkrybowane przez Whisper i zamieniane na wpis</li>
                     <li class="flex gap-2"><span class="text-gold-500">✓</span> Odczyt paragonów i faktur ze zdjęcia: sklep, kwota, data</li>
-                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Kategorie klienta trzymane w arkuszu — AI dopasowuje wydatek, a nowe kategorie dodaje się wiadomością</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Kategorie klienta trzymane w arkuszu: AI dopasowuje wydatek, a nowe kategorie dodaje się wiadomością</li>
                     <li class="flex gap-2"><span class="text-gold-500">✓</span> Komendy z podsumowaniem: suma i liczba wpisów w danej kategorii</li>
                 </ul>
                 <div class="mt-6 flex flex-wrap gap-2">
@@ -421,7 +441,7 @@
                     <span class="shrink-0 whitespace-nowrap text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">n8n · Telegram bot</span>
                 </div>
                 <p class="mt-4 text-gray-400">
-                    Wspólna lista zakupów dla domowników, obsługiwana z Telegrama — tekstem albo głosem.
+                    Wspólna lista zakupów dla domowników, obsługiwana z Telegrama tekstem albo głosem.
                     „Dodaj mleko, chleb i masło” tworzy trzy pozycje w Google Tasks, a admin
                     od razu dostaje powiadomienie, kto i co dopisał do listy.
                 </p>
@@ -441,7 +461,7 @@
 
                 <ul class="mt-6 space-y-2 text-sm text-gray-400">
                     <li class="flex gap-2"><span class="text-gold-500">✓</span> Komendy tekstowe i głosowe: dodaj, lista, kupione, usuń, ile, wyczyść, pomoc</li>
-                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Kilka produktów w jednej wiadomości — rozbijane na osobne pozycje</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Kilka produktów w jednej wiadomości rozbijanych na osobne pozycje</li>
                     <li class="flex gap-2"><span class="text-gold-500">✓</span> Dostęp tylko dla autoryzowanych użytkowników (whitelista w Google Sheets)</li>
                     <li class="flex gap-2"><span class="text-gold-500">✓</span> Cotygodniowe przypomnienie do wszystkich: co jeszcze zostało do kupienia</li>
                 </ul>
@@ -496,7 +516,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center">Jak wygląda współpraca</h2>
         <p class="mt-4 text-center text-gray-400 max-w-2xl mx-auto">
-            Bez żargonu i bez ryzyka — zaczynamy od rozmowy, a płacisz za konkretny, działający efekt.
+            Zaczynamy od rozmowy. Płacisz za konkretny efekt, który działa.
         </p>
         <ol class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <li class="reveal relative bg-navy-800 rounded-2xl p-6 border border-navy-600/50 hover:border-gold-500/30 transition">
@@ -550,12 +570,31 @@
     <script type="application/ld+json">{{ faq_schema }}</script>
 </section>
 
+<!-- Technologie (dla zainteresowanych) -->
+<section id="technologie" class="py-10 border-t border-navy-600/40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-xs uppercase tracking-wider text-gray-500">Na czym buduję</p>
+        <ul class="mt-4 flex flex-wrap justify-center gap-2 text-sm text-gray-400">
+            <li class="px-3 py-1 rounded-full border border-navy-600/60 bg-navy-800/60">n8n</li>
+            <li class="px-3 py-1 rounded-full border border-navy-600/60 bg-navy-800/60">Django</li>
+            <li class="px-3 py-1 rounded-full border border-navy-600/60 bg-navy-800/60">Python</li>
+            <li class="px-3 py-1 rounded-full border border-navy-600/60 bg-navy-800/60">Claude API</li>
+            <li class="px-3 py-1 rounded-full border border-navy-600/60 bg-navy-800/60">OpenAI</li>
+            <li class="px-3 py-1 rounded-full border border-navy-600/60 bg-navy-800/60">Telegram</li>
+            <li class="px-3 py-1 rounded-full border border-navy-600/60 bg-navy-800/60">Google Workspace</li>
+            <li class="px-3 py-1 rounded-full border border-navy-600/60 bg-navy-800/60">Twilio</li>
+            <li class="px-3 py-1 rounded-full border border-navy-600/60 bg-navy-800/60">PostgreSQL</li>
+            <li class="px-3 py-1 rounded-full border border-navy-600/60 bg-navy-800/60">Docker</li>
+        </ul>
+    </div>
+</section>
+
 <!-- Kontakt -->
 <section id="kontakt" class="py-16 sm:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl font-bold">Kontakt</h2>
         <p class="mt-4 text-gray-400">
-            Masz proces, który warto zautomatyzować? Napisz albo zadzwoń — porozmawiajmy.
+            Masz proces, który warto zautomatyzować? Napisz albo zadzwoń.
         </p>
         <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
             <a href="mailto:kontakt@nexuslab.pl"

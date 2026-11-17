@@ -27,18 +27,18 @@ FAQ = [
     },
     {
         'q': 'Ile to kosztuje?',
-        'a': 'Zależy od zakresu — dlatego zaczynamy od bezpłatnej rozmowy. Po niej dostajesz '
+        'a': 'Zależy od zakresu, dlatego zaczynamy od bezpłatnej rozmowy. Po niej dostajesz '
              'konkretną wycenę za cały projekt, bez niespodzianek w trakcie.',
     },
     {
         'q': 'Kto płaci za AI, SMS-y i serwer?',
         'a': 'Usługi takie jak OpenAI, Claude czy Twilio rozliczane są według zużycia, zwykle na '
-             'Twoim koncie — masz pełną kontrolę nad kosztami. Przy prostych automatyzacjach to '
+             'Twoim koncie, więc masz pełną kontrolę nad kosztami. Przy prostych automatyzacjach to '
              'często kilka–kilkanaście złotych miesięcznie. Szacunek kosztów stałych jest częścią wyceny.',
     },
     {
         'q': 'Muszę znać się na technologii?',
-        'a': 'Nie. Rozwiązanie działa w narzędziach, których już używasz — mailu, Telegramie, '
+        'a': 'Nie. Rozwiązanie działa w narzędziach, których już używasz: mailu, Telegramie, '
              'arkuszu Google czy telefonie. Pokazuję, jak z niego korzystać, i zostawiam krótką instrukcję.',
     },
     {
@@ -48,7 +48,7 @@ FAQ = [
     },
     {
         'q': 'Czy pracujesz zdalnie?',
-        'a': 'Tak — rozmowy, wdrożenie i wsparcie prowadzę zdalnie, dla klientów z całej Polski.',
+        'a': 'Tak. Rozmowy, wdrożenie i wsparcie prowadzę zdalnie, dla klientów z całej Polski.',
     },
 ]
 

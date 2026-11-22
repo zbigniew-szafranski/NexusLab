@@ -18,8 +18,13 @@
 - [ ] Polityka prywatności: adres / NIP administratora
 - [ ] Sekretarka: rozmyć nazwisko „Jozef Owicz”, jeśli to prawdziwa osoba
 - [ ] Tailwind z CDN → zbudowany CSS (wydajność)
+- [ ] Lokalne zmiany na serwerze (`config/settings/production.py`, `gunicorn_config.py`) przenieść do repo albo .env
 - [ ] Analityka bez cookies (Plausible / Umami)
 - [ ] Link do LinkedIna, case study Flowmail
+- [x] Zamazane nazwy botów w makietach (asystent wydatków, lista zakupów) (18.11)
+- [x] „O mnie” o korzyściach dla klienta, technologie w pasku na dole, teksty bez długich myślników (18.11)
+- [x] Projekt „Zamawianie obiadów” w portfolio, bez nazwy szkoły, nowy film z danymi demo (23.11)
+- [ ] Opinie rodziców z aplikacji obiadów (panel /admin/opinie, tylko ze zgodą) dodać do sekcji „Opinie”
 
 ## GitHub
 

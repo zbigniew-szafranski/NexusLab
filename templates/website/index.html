@@ -214,6 +214,46 @@
                 </div>
             </article>
 
+            <!-- Zamawianie obiadów -->
+            <article class="reveal flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+                <div class="block mb-6 overflow-hidden rounded-xl border border-navy-600/50">
+                    <video class="w-full h-auto block" width="960" height="600" muted loop playsinline preload="none"
+                           poster="{% static 'img/obiady.jpg' %}" data-lazy-src="{% static 'img/obiady.mp4' %}"
+                           aria-label="Aplikacja do zamawiania obiadów na telefonie: pulpit rodzica z saldem, zamawianie na tydzień, oceny dań, wydawanie obiadów i ranking dań dla kuchni (dane demo)"></video>
+                </div>
+                <div class="flex items-center justify-between gap-4">
+                    <h3 class="text-2xl font-bold">Zamawianie obiadów</h3>
+                    <span class="shrink-0 whitespace-nowrap text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">Aplikacja webowa</span>
+                </div>
+                <p class="mt-4 text-gray-400">
+                    Aplikacja do zamawiania obiadów w szkole lub przedszkolu. Rodzice zamawiają z telefonu
+                    na cały tydzień, kuchnia od razu wie, ile porcji przygotować, a osoba wydająca obiady
+                    odhacza na tablecie, kto zjadł. Zastąpiła ankietę Google i ręczne liczenie zamówień,
+                    działa na co dzień w placówce.
+                </p>
+                <ul class="mt-6 space-y-2 text-sm text-gray-400">
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Zamawianie z telefonu: zupa i drugie danie na każdy dzień, zmiany do 23:00 dnia poprzedniego</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Saldo z góry: wpłaty gotówką, obiady odliczane automatycznie, przypomnienie o niskim saldzie</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Wydawanie: małe i duże porcje, zgoda na mikrofalówkę, informacja „zjadło” dla rodzica</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Kuchnia: porcje na każdy dzień, ranking dań z ocen rodziców, arkusz Google odświeżany sam</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Panel administratora: statusy rodzin, zaproszenia i przypomnienia mailem, newsletter</li>
+                </ul>
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">FastAPI</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">SQLite</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Jinja</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Google Apps Script</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Amazon SES</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Docker</span>
+                </div>
+                <div class="mt-auto pt-8">
+                    <a href="#kontakt"
+                       class="inline-flex items-center justify-center whitespace-nowrap px-6 py-3 bg-gold-500 text-navy-900 font-bold rounded-full hover:bg-gold-400 transition">
+                        Chcę taką w mojej placówce →
+                    </a>
+                </div>
+            </article>
+
             <!-- Gratka Alerts -->
             <article class="reveal flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
                 <a href="https://gratka.nexuslab.pl" target="_blank" rel="noopener"

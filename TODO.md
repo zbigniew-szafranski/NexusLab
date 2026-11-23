@@ -24,6 +24,7 @@
 - [x] Zamazane nazwy botów w makietach (asystent wydatków, lista zakupów) (18.11)
 - [x] „O mnie” o korzyściach dla klienta, technologie w pasku na dole, teksty bez długich myślników (18.11)
 - [x] Projekt „Zamawianie obiadów” w portfolio, bez nazwy szkoły, nowy film z danymi demo (23.11)
+- [x] Projekt „PDF do Worda” w portfolio: film z prawdziwego programu (pismo demo), przycisk „Chcę mieć” (23.11)
 - [ ] Opinie rodziców z aplikacji obiadów (panel /admin/opinie, tylko ze zgodą) dodać do sekcji „Opinie”
 
 ## GitHub

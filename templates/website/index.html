@@ -254,6 +254,46 @@
                 </div>
             </article>
 
+            <!-- PDF do Worda -->
+            <article class="reveal flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
+                <div class="block mb-6 overflow-hidden rounded-xl border border-navy-600/50">
+                    <video class="w-full h-auto block" width="960" height="600" muted loop playsinline preload="none"
+                           poster="{% static 'img/pdf-do-worda.jpg' %}" data-lazy-src="{% static 'img/pdf-do-worda.mp4' %}"
+                           aria-label="Program PDF do Worda: zdjęcie pisma z tabelą i pieczątką, konwersja jednym przyciskiem i gotowy dokument Word z zachowanym układem, edytowany od razu (dane demo)"></video>
+                </div>
+                <div class="flex items-center justify-between gap-4">
+                    <h3 class="text-2xl font-bold">PDF do Worda</h3>
+                    <span class="shrink-0 whitespace-nowrap text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/15 text-gold-400">Windows · Linux</span>
+                </div>
+                <p class="mt-4 text-gray-400">
+                    Program, który zamienia zdjęcia i skany pism urzędowych na edytowalny dokument Word.
+                    Prostuje krzywe zdjęcie z telefonu, odczytuje polski tekst i zachowuje układ:
+                    numerację, wcięcia, tabele i kolumny. Wszystko działa na komputerze użytkownika,
+                    bez wysyłania dokumentów do chmury.
+                </p>
+                <ul class="mt-6 space-y-2 text-sm text-gray-400">
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Jeden przycisk: wybierz PDF, kliknij „Konwertuj do Worda”, otwórz gotowy plik</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Układ jak w oryginale: numery punktów, wcięcia, tabele z liniami i bez, dwie kolumny</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Podpisy, pismo ręczne i pieczątki wstawiane jako obrazy w dokumencie</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Zgodnie z RODO: dokumenty nie opuszczają komputera, kopie robocze usuwane od razu</li>
+                    <li class="flex gap-2"><span class="text-gold-500">✓</span> Instalator na Windows i Linux, automatyczne aktualizacje</li>
+                </ul>
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Python</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Tesseract OCR</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">PyMuPDF</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">python-docx</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">Tkinter</span>
+                    <span class="text-xs px-2.5 py-1 rounded-md bg-navy-700 text-gray-300 border border-navy-600/50">PyInstaller + NSIS</span>
+                </div>
+                <div class="mt-auto pt-8">
+                    <a href="#kontakt"
+                       class="inline-flex items-center justify-center whitespace-nowrap px-6 py-3 bg-gold-500 text-navy-900 font-bold rounded-full hover:bg-gold-400 transition">
+                        Chcę mieć →
+                    </a>
+                </div>
+            </article>
+
             <!-- Gratka Alerts -->
             <article class="reveal flex flex-col bg-navy-800 rounded-2xl p-8 border border-navy-600/50 hover:border-gold-500/30 transition">
                 <a href="https://gratka.nexuslab.pl" target="_blank" rel="noopener"

@@ -21,9 +21,9 @@ CONTACT_RATE_LIMIT = 5  # submissions per IP per hour
 FAQ = [
     {
         'q': 'Ile trwa wdrożenie?',
-        'a': 'Prosta automatyzacja, np. bot na Telegramie albo workflow w n8n, to zwykle kilka dni. '
-             'Aplikacja z panelem i kontami użytkowników to kilka tygodni. Dokładny termin podaję '
-             'w wycenie, po rozmowie.',
+        'a': 'Zależy od zakresu. Prosta automatyzacja, np. bot w komunikatorze albo przekazywanie '
+             'danych do arkusza, to zwykle kilka dni. Aplikacja z kontami użytkowników to kilka '
+             'tygodni. Dokładny termin podaję w wycenie, po rozmowie.',
     },
     {
         'q': 'Ile to kosztuje?',
@@ -32,19 +32,25 @@ FAQ = [
     },
     {
         'q': 'Kto płaci za AI, SMS-y i serwer?',
-        'a': 'Usługi takie jak OpenAI, Claude czy Twilio rozliczane są według zużycia, zwykle na '
-             'Twoim koncie, więc masz pełną kontrolę nad kosztami. Przy prostych automatyzacjach to '
-             'często kilka–kilkanaście złotych miesięcznie. Szacunek kosztów stałych jest częścią wyceny.',
+        'a': 'Te usługi są rozliczane według zużycia, zwykle bezpośrednio na Twoim koncie u dostawcy, '
+             'więc masz pełną kontrolę nad kosztami. Przy prostych automatyzacjach to często '
+             'kilka–kilkanaście złotych miesięcznie. Szacunek kosztów stałych jest częścią wyceny.',
+    },
+    {
+        'q': 'Czy AI może się pomylić?',
+        'a': 'Tak, dlatego tam, gdzie AI pisze tekst albo odczytuje dane, ostatnie słowo ma człowiek. '
+             'Na przykład we Flowmail doradca sprawdza i zatwierdza każdy mail przed wysłaniem.',
     },
     {
         'q': 'Muszę znać się na technologii?',
-        'a': 'Nie. Rozwiązanie działa w narzędziach, których już używasz: mailu, Telegramie, '
+        'a': 'Nie. Rozwiązanie działa w narzędziach, których już używasz: mailu, komunikatorze, '
              'arkuszu Google czy telefonie. Pokazuję, jak z niego korzystać, i zostawiam krótką instrukcję.',
     },
     {
         'q': 'Co jeśli coś przestanie działać?',
-        'a': 'Monitoruję wdrożone automatyzacje i naprawiam błędy. Gdy zmieni się np. strona, z której '
-             'pobierane są dane, albo API dostawcy, dostosowuję rozwiązanie.',
+        'a': 'Monitoruję wdrożone rozwiązania i naprawiam błędy. Część automatyzacji zależy od '
+             'zewnętrznych serwisów: gdy zmieni się np. strona, z której pobierane są dane, albo '
+             'usługa dostawcy, trzeba rozwiązanie dostosować i ja to robię.',
     },
     {
         'q': 'Czy pracujesz zdalnie?',
@@ -71,6 +77,23 @@ TESTIMONIALS = [
 ]
 
 
+# Parents' reviews of the meal ordering app, as written in the app (spelling fixes only).
+# All 9 ratings: 8 x 5 stars + 1 x 4 stars; 7 with a comment. One commented review is
+# deliberately not published, two ratings have no comment.
+MEAL_REVIEWS = [
+    {'quote': 'Bardzo przejrzysty i intuicyjny interfejs, zaoszczędziłem masę czasu w porównaniu '
+              'do poprzedniego sposobu z Excelem', 'name': 'Tomasz'},
+    {'quote': 'Prosta, intuicyjna, przejrzysta, spełniająca swoją funkcję - po prostu idealna! '
+              'Do tego ciągle rozwijana :)', 'name': 'Maciej'},
+    {'quote': 'Jestem Ci bardzo wdzięczna za tę stronę. Takiej organizacji w tej szkole potrzebujemy!',
+     'name': 'Kamila'},
+    {'quote': 'Świetna aplikacja! Bardzo instynktowna i mega pomocna! Dzięki!', 'name': 'Marta'},
+    {'quote': 'Intuicyjna, funkcjonalna, prosta.', 'name': 'Paulina'},
+    {'quote': 'Wszystko bardzo przejrzyste', 'name': 'Katarzyna'},
+]
+MEAL_RATING = {'average': '4,9', 'count': 9, 'with_comment': 7}
+
+
 def _faq_schema():
     schema = {
         '@context': 'https://schema.org',
@@ -91,6 +114,8 @@ def home(request):
         'faq': FAQ,
         'faq_schema': _faq_schema(),
         'testimonials': TESTIMONIALS,
+        'meal_reviews': MEAL_REVIEWS,
+        'meal_rating': MEAL_RATING,
     })
 
 

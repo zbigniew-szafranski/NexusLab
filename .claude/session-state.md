@@ -1,7 +1,28 @@
 # Session State
 
 > Plik do zachowywania kontekstu miedzy sesjami. Po `/clear` uzyj `/catchup` aby wczytac.
-> Ostatnia aktualizacja: 2026-10-18
+> Ostatnia aktualizacja: 2026-11-26
+
+## Sesja 3 — 2026-11-26
+
+### Co zrobiono
+
+#### [Nowa odsłona strony głównej nexuslab.pl] (GOTOWE, wdrożone — commit `40471f5`)
+
+- **Koncepcja i makieta** — analiza starego designu, makieta desktop/mobile jako artifact (https://claude.ai/artifact/LrUDYacnHNNdiNimnTiC11), audyt „pierwszy klient” i 5 poprawek; decyzje: ciepła jasna baza, granat, akcent #E0501E (przyciski #C8441A dla kontrastu), hasło „Mniej ręcznej roboty. Więcej czasu na klientów.”, pozycjonowanie 25 lat w sprzedaży / 15 lat w KAM
+- **`templates/website/base_site.html`** — nowy, osobny szablon bazowy strony (jasna nawigacja z przyciskiem „Kontakt” na telefonie, menu mobilne, stopka 4 kolumny); `base.html` bez zmian, więc panel Gratka, logowanie, cennik i polityka prywatności wyglądają jak dotąd
+- **`templates/website/index.html`** — hero z odbiorcą i podpisem właściciela, „Z czym przychodzą do nas firmy”, 3 case study (Flowmail, Szybkie zamówienia B2B — Yango anonimowo z odtworzonym ekranem, System zamawiania posiłków), siatka 6 realizacji z filtrem (3 karty + „Pokaż wszystkie” na telefonie), O mnie z branżami, opinie, współpraca, FAQ, kontakt; meta/OG/JSON-LD zachowane, dodane `sameAs` GitHub
+- **`templates/website/partials/contact_form.html`** — jasny wygląd; pola, `hx-post`, CSRF, honeypot, błędy i klauzula RODO bez zmian
+- **`apps/website/views.py` `FAQ`, `MEAL_REVIEWS`, `MEAL_RATING`, `home`** — FAQ bez żargonu (+ „Czy AI może się pomylić?”), 6 opinii rodziców (poprawiona tylko pisownia, opinia „Zbigniew, rodzic” pominięta), średnia 4,9/5 z 9 ocen; zgody autorów potwierdzone przez właściciela
+- **`static/css/site.css`, `static/js/site.js`** — style i JS strony głównej zamiast Tailwind CDN i Alpine (menu, filtr, „Pokaż wszystkie”, lazy-load filmów); fix: `<picture>` nie może się kurczyć w flex (ściśnięty awatar)
+- **`static/fonts/`** — Bricolage Grotesque + Figtree (OFL) hostowane lokalnie zamiast Google Fonts (RODO)
+- **Deploy** — `ssh nexuslab` (port 2222) + `./deploy.sh`; weryfikacja: wszystkie strony i statyki 200, gratka 302 → logowanie, zrzuty produkcji OK, testowa wiadomość z formularza wysłana („Test wdrożenia (Claude)”)
+
+### Następny krok
+
+Potwierdzić, że testowa wiadomość doszła na kontakt@nexuslab.pl, odświeżyć podgląd w Facebook Sharing Debugger (najlepiej po zrobieniu nowego og-image w jasnych kolorach), a potem etap 2: cennik i polityka prywatności przeniesione na `base_site.html` w jasnym stylu.
+
+---
 
 ## Sesja 2 — 2026-10-18
 
@@ -90,7 +111,7 @@ Wdrożenie poprawionego workflow Gratka (`GRATKA.md`), deploy nexuslab.pl i wery
 
 - **allauth rate limit ValueError** — format `"3/h/ip"` nieprawidłowy dla 0.57.x, poprawny to `"3/h"`
 - **110 plików w git status** — fałszywe zmiany uprawnień na NTFS, fix: `git config core.fileMode false`
-- **SSH timeout** — VPS nieosiągalny z lokalnej maszyny przez SSH, deploy ręcznie z VPS
+- **SSH timeout** — port 22 nie odpowiada; SSH działa na porcie 2222 przez alias `ssh nexuslab` z `~/.ssh/config` (deploy z lokalnej maszyny: `ssh nexuslab 'cd /var/www/nexuslab && ./deploy.sh'`)
 
 ## Wazne decyzje
 

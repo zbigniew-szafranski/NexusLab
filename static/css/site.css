@@ -354,3 +354,33 @@ body.site {
 /* <picture> wrappers must not shrink inside flex rows (avatar in hero byline and contact card) */
 .m-byline picture, .m-contact-side .who picture { flex: none; display: block; line-height: 0; }
 .m-portrait picture { display: block; position: relative; }
+
+/* Case study pages (/realizacje/...) */
+.m-cs-hero { padding-block: 40px 8px; }
+.m-crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px; color: var(--m-muted); margin-bottom: 22px; }
+.m-crumbs a:hover { color: var(--m-ink); text-decoration: underline; }
+.m-cs-hero h1 { margin-top: 10px; font-size: clamp(32px, 5vw, 52px); line-height: 1.08; font-weight: 700; max-width: 22ch; }
+.m-cs-lead { margin-top: 18px !important; font-size: clamp(17px, 2vw, 19px); max-width: 62ch; }
+.m-cs-shot { margin: 36px 0 0; }
+.m-cs-body { max-width: 760px; margin: 0 auto; padding-block: 24px 72px; }
+.m-cs-body section { margin-top: 48px; }
+.m-cs-body h2 { font-size: clamp(24px, 3vw, 30px); font-weight: 700; line-height: 1.15; }
+.m-cs-body section > p { margin-top: 14px !important; font-size: 17px; line-height: 1.7; }
+.m-cs-flow { margin: 20px 0 0; padding: 0; list-style: none; counter-reset: cs; display: grid; gap: 14px; }
+.m-cs-flow li { counter-increment: cs; position: relative; padding: 16px 18px 16px 62px; background: var(--m-white); border: 1px solid var(--m-line); border-radius: 14px; font-size: 16px; }
+.m-cs-flow li::before { content: counter(cs); position: absolute; left: 16px; top: 14px; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; border: 2px solid var(--m-ember); color: var(--m-ember-600); font-family: var(--font-display); font-weight: 700; font-size: 15px; }
+.m-cs-flow b { color: var(--m-ink); }
+.m-cs-list { margin: 16px 0 0; padding-left: 22px; display: grid; gap: 8px; font-size: 17px; }
+.m-cs-list li::marker { color: var(--m-ember); }
+.m-cs-tech { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .m-cs-tech { grid-template-columns: 1fr 1fr; } }
+.m-cs-tech li { background: var(--m-white); border: 1px solid var(--m-line); border-radius: 12px; padding: 12px 16px; font-size: 14.5px; color: var(--m-muted); }
+.m-cs-tech b { display: block; color: var(--m-ink); font-size: 16px; }
+.m-cs-body .m-qgrid { margin-top: 20px; }
+.m-cs-cta { margin-top: 56px; }
+.m-cs-cta h2 { color: #fff; font-size: 24px; }
+.m-cs-back { margin-top: 28px !important; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.m-cs-back .sep { color: var(--m-line); }
+.m-cs-hero .m-stats { display: grid; grid-template-columns: 1fr 1fr; }
+.m-cs-hero .m-stats > div { min-width: 0; }
+@media (min-width: 760px) { .m-cs-hero .m-stats { display: flex; } .m-cs-hero .m-stats > div { min-width: 130px; } }

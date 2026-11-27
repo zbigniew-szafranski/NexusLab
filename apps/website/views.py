@@ -140,6 +140,7 @@ def robots_txt(request):
 
 SITEMAP_PAGES = [
     ('/', 'website/index.html'),
+    ('/realizacje/flowmail/', 'website/case_flowmail.html'),
     ('/cennik/', 'website/pricing.html'),
     ('/polityka-prywatnosci/', 'website/privacy.html'),
 ]
@@ -165,6 +166,10 @@ def sitemap_xml(request):
         f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>'
     )
     return HttpResponse(xml, content_type='application/xml')
+
+
+def case_flowmail(request):
+    return render(request, 'website/case_flowmail.html', {'testimonials': TESTIMONIALS})
 
 
 def pricing(request):

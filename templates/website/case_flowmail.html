@@ -1,0 +1,178 @@
+{% extends "website/base_site.html" %}
+{% load static %}
+
+{% block head_title %}Flowmail: aplikacja AI do pisania maili dla doradców sprzedaży | NexusLab{% endblock %}
+
+{% block meta %}
+    {% with title="Flowmail: spersonalizowany mail do klienta w 30 sekund" description="Case study: aplikacja z AI, która pisze maile do klientów na podstawie notatki doradcy, historii klienta i ponad 3 700 materiałów branżowych. 23 doradców używa jej na co dzień." url="https://nexuslab.pl/realizacje/flowmail/" %}
+    <meta name="description" content="{{ description }}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="{{ url }}">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="NexusLab">
+    <meta property="og:url" content="{{ url }}">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="https://nexuslab.pl{% static 'img/flowmail.jpg' %}">
+    <meta property="og:image:width" content="960">
+    <meta property="og:image:height" content="600">
+    <meta property="og:image:alt" content="Strona główna aplikacji Flowmail">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ description }}">
+    <meta name="twitter:image" content="https://nexuslab.pl{% static 'img/flowmail.jpg' %}">
+    {% endwith %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+        {
+            "@type": "Article",
+            "@id": "https://nexuslab.pl/realizacje/flowmail/#article",
+            "headline": "Flowmail: spersonalizowany mail do klienta w 30 sekund",
+            "description": "Case study aplikacji z AI, która pisze maile do klientów dla doradców sprzedaży.",
+            "inLanguage": "pl-PL",
+            "mainEntityOfPage": "https://nexuslab.pl/realizacje/flowmail/",
+            "image": [
+                "https://nexuslab.pl{% static 'img/flowmail.jpg' %}"
+            ],
+            "datePublished": "2026-11-28",
+            "author": {
+                "@type": "Person",
+                "name": "Zbigniew Szafrański",
+                "url": "https://nexuslab.pl/"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "NexusLab",
+                "url": "https://nexuslab.pl/"
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "NexusLab", "item": "https://nexuslab.pl/"},
+                {"@type": "ListItem", "position": 2, "name": "Realizacje", "item": "https://nexuslab.pl/#projekty"},
+                {"@type": "ListItem", "position": 3, "name": "Flowmail", "item": "https://nexuslab.pl/realizacje/flowmail/"}
+            ]
+        }
+        ]
+    }
+    </script>
+{% endblock %}
+
+{% block content %}
+
+<article class="m-cs">
+    <header class="m-cs-hero">
+        <div class="m-in">
+            <nav class="m-crumbs" aria-label="Okruszki">
+                <a href="/">NexusLab</a><span aria-hidden="true">/</span><a href="/#projekty">Realizacje</a><span aria-hidden="true">/</span><span aria-current="page">Flowmail</span>
+            </nav>
+            <p class="m-tag">Case study · Doradcy sprzedaży · Aplikacja z AI</p>
+            <h1>Flowmail: spersonalizowany mail do klienta w&nbsp;około 30&nbsp;sekund</h1>
+            <p class="m-cs-lead">Aplikacja, w której doradca sprzedaży zapisuje albo nagrywa krótką notatkę, a&nbsp;AI pisze z&nbsp;niej gotowego maila do konkretnego klienta. Doradca sprawdza treść i&nbsp;wysyła ją ze swojego adresu.</p>
+            <div class="m-stats">
+                <div><b>23</b><span>doradców używa na co dzień</span></div>
+                <div><b>400+</b><span>maili i newsletterów</span></div>
+                <div><b>3 700+</b><span>materiałów w bazie wiedzy</span></div>
+                <div><b>~30 s</b><span>na jednego maila</span></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="m-in">
+        <figure class="m-cs-shot">
+            <div class="m-browser">
+                <div class="m-browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>panelgw.com</span></div>
+                <picture>
+                    <source srcset="{% static 'img/flowmail.webp' %}" type="image/webp">
+                    <img src="{% static 'img/flowmail.jpg' %}" width="960" height="600"
+                         alt="Strona główna Flowmail: „30 sekund. Mail gotowy. Reszta dnia — Twoja.”">
+                </picture>
+            </div>
+        </figure>
+
+        <div class="m-cs-body">
+            <section>
+                <h2>Dla kogo</h2>
+                <p>Dla niezależnych doradców sprzedaży marki Green Ways (suplementy diety). Każdy doradca buduje własną bazę klientów i&nbsp;sam dba o&nbsp;kontakt z&nbsp;nimi: przypomina o&nbsp;sobie, odpowiada na pytania, wraca do osób, które przestały kupować.</p>
+            </section>
+
+            <section>
+                <h2>Problem</h2>
+                <p>Dobry mail do klienta wymaga czasu. Trzeba przypomnieć sobie, kim jest ten klient i&nbsp;co kupował, znaleźć pasujące materiały, na przykład badania, opisy produktów czy historie innych klientów, a&nbsp;potem napisać to wszystko własnymi słowami. Przy kilkudziesięciu czy kilkuset klientach w&nbsp;bazie po prostu się tego nie robi i&nbsp;kontakt z&nbsp;klientem się urywa.</p>
+                <p>Ogólnodostępny czat AI nie rozwiązuje problemu. Nie zna historii klienta ani materiałów marki i&nbsp;potrafi „dopowiedzieć” rzeczy nieprawdziwe, a&nbsp;w&nbsp;branży suplementów to realne ryzyko.</p>
+            </section>
+
+            <section>
+                <h2>Rozwiązanie</h2>
+                <p>Flowmail to aplikacja webowa, w&nbsp;której każdy doradca ma własne konto i&nbsp;własną bazę klientów. Pisanie maila wygląda tak:</p>
+                <ol class="m-cs-flow">
+                    <li><b>Notatka doradcy.</b> Doradca wybiera klienta i&nbsp;pisze albo nagrywa głosowo kilka zdań, np. o&nbsp;czym chce mu przypomnieć. Nagranie jest automatycznie zamieniane na tekst.</li>
+                    <li><b>Wyszukanie materiałów.</b> Aplikacja przeszukuje bazę wiedzy z&nbsp;ponad 3&nbsp;700 materiałów branżowych i&nbsp;wybiera te, które pasują do tematu i&nbsp;klienta.</li>
+                    <li><b>Mail pisany przez AI.</b> Model językowy pisze spersonalizowanego maila na podstawie notatki, historii klienta i&nbsp;znalezionych materiałów.</li>
+                    <li><b>Druga kontrola.</b> Osobny model AI sprawdza gotową treść, zanim zobaczy ją doradca.</li>
+                    <li><b>Zatwierdzenie przez człowieka.</b> Doradca czyta maila, może poprawić temat i&nbsp;treść albo poprosić AI o&nbsp;poprawki własnymi słowami. Nic nie wychodzi bez jego akceptacji.</li>
+                    <li><b>Wysyłka z&nbsp;adresu doradcy.</b> Mail wychodzi z&nbsp;jego skrzynki, ze zdjęciem doradcy i&nbsp;dołączonymi certyfikatami produktów. Można go też zaplanować na później.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Co jeszcze jest w&nbsp;aplikacji</h2>
+                <p>Generator maili był punktem wyjścia. Na prośbę doradców aplikacja urosła w&nbsp;narzędzie do codziennej pracy z&nbsp;klientami:</p>
+                <ul class="m-cs-list">
+                    <li>baza klientów synchronizowana z&nbsp;systemem marki, z&nbsp;grupami i&nbsp;filtrami</li>
+                    <li>newsletter do wybranej grupy klientów</li>
+                    <li>podpowiedzi AI, jak odpowiedzieć klientowi na konkretne pytanie, z&nbsp;historią porad</li>
+                    <li>skrzynka odbiorcza i&nbsp;nadawcza w&nbsp;jednym miejscu</li>
+                    <li>kalendarz, zadania i&nbsp;przypomnienia o&nbsp;klientach</li>
+                    <li>pomoc w&nbsp;pisaniu postów i&nbsp;komentarzy na Facebooku</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Jak powstawało</h2>
+                <p>Pierwsza wersja była prototypem w&nbsp;n8n: kilka workflowów, które pozwoliły szybko sprawdzić, czy maile pisane przez AI w&nbsp;ogóle sprawdzają się w&nbsp;praktyce. Gdy okazało się, że tak, w&nbsp;kwietniu 2026 przepisałem całość na własną aplikację w&nbsp;Django z&nbsp;kontami dla wielu doradców. Od tamtej pory rozwija się na bieżąco, na podstawie tego, o&nbsp;co proszą sami użytkownicy.</p>
+                <p>To podejście polecam też klientom: najpierw szybki prototyp na gotowych narzędziach, a&nbsp;dopiero potem, gdy rozwiązanie się sprawdzi, pełna aplikacja.</p>
+            </section>
+
+            <section>
+                <h2>Opinie użytkowniczek</h2>
+                <div class="m-qgrid">
+                    {% for t in testimonials %}
+                    <figure class="m-q{% if forloop.first %} big{% endif %}">
+                        <span class="mark" aria-hidden="true">„</span>
+                        <blockquote>{{ t.quote }}</blockquote>
+                        <figcaption><span class="ini" aria-hidden="true">{{ t.name|first }}</span><span><b>{{ t.name }}</b><span>{{ t.role }}</span></span></figcaption>
+                    </figure>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section>
+                <h2>Technologie</h2>
+                <ul class="m-cs-tech">
+                    <li><b>Django</b>aplikacja webowa, konta doradców</li>
+                    <li><b>Claude</b>pisanie i&nbsp;sprawdzanie maili</li>
+                    <li><b>Qdrant + OpenAI Embeddings</b>wyszukiwanie w&nbsp;bazie wiedzy</li>
+                    <li><b>Whisper</b>notatki głosowe na tekst</li>
+                    <li><b>Docker</b>wdrożenie na serwerze</li>
+                </ul>
+            </section>
+
+            <aside class="m-banner m-cs-cta">
+                <div>
+                    <h2>Twoi handlowcy też piszą maile od zera?</h2>
+                    <p>Podobne rozwiązanie da się zbudować pod Twoją firmę, Twoje materiały i&nbsp;Twój sposób pracy z&nbsp;klientami. Zacznijmy od bezpłatnej rozmowy.</p>
+                </div>
+                <a href="/#kontakt" class="m-btn">Umów bezpłatną rozmowę</a>
+            </aside>
+
+            <p class="m-cs-back"><a class="m-link" href="/#projekty">← Wszystkie realizacje</a> <span class="sep">·</span> <a class="m-link quiet" href="https://panelgw.com/" target="_blank" rel="noopener">Strona projektu ↗</a></p>
+        </div>
+    </div>
+</article>
+
+{% endblock %}

@@ -1,11 +1,14 @@
 import json
 import logging
+import os
+from datetime import datetime, timezone
 
 from django.conf import settings
 from django.core.cache import cache
 from django.core.mail import EmailMessage
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.template.loader import get_template
 from django.utils.safestring import mark_safe
 from django.views.decorators.http import require_POST
 
@@ -135,11 +138,28 @@ def robots_txt(request):
     return HttpResponse('\n'.join(lines) + '\n', content_type='text/plain')
 
 
-SITEMAP_PATHS = ['/', '/cennik/', '/polityka-prywatnosci/']
+SITEMAP_PAGES = [
+    ('/', 'website/index.html'),
+    ('/cennik/', 'website/pricing.html'),
+    ('/polityka-prywatnosci/', 'website/privacy.html'),
+]
+
+
+def _template_lastmod(template_name):
+    """Last modification date of a template file (updated by git pull on deploy)."""
+    try:
+        origin = get_template(template_name).origin.name
+        return datetime.fromtimestamp(os.path.getmtime(origin), tz=timezone.utc).date().isoformat()
+    except Exception:
+        return None
 
 
 def sitemap_xml(request):
-    urls = ''.join(f'<url><loc>https://nexuslab.pl{path}</loc></url>' for path in SITEMAP_PATHS)
+    urls = ''
+    for path, template_name in SITEMAP_PAGES:
+        lastmod = _template_lastmod(template_name)
+        lastmod_tag = f'<lastmod>{lastmod}</lastmod>' if lastmod else ''
+        urls += f'<url><loc>https://nexuslab.pl{path}</loc>{lastmod_tag}</url>'
     xml = (
         '<?xml version="1.0" encoding="UTF-8"?>'
         f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>'

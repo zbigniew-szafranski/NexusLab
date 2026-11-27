@@ -6,6 +6,7 @@
 {% block meta %}
     {% with title="NexusLab: automatyzacje i AI, które oszczędzają czas" description="Automatyzacje n8n, integracje AI (Claude, OpenAI) i aplikacje w Django. Boty Telegram, asystenci głosowi, CRM i SaaS: od rozmowy do wdrożenia. Zbigniew Szafrański." %}
     <meta name="description" content="{{ description }}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://nexuslab.pl/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pl_PL">
@@ -26,10 +27,36 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
+        "@graph": [
+        {
+        "@type": "WebPage",
+        "@id": "https://nexuslab.pl/#webpage",
+        "url": "https://nexuslab.pl/",
+        "name": "NexusLab: automatyzacje i AI, które oszczędzają czas",
+        "inLanguage": "pl-PL",
+        "about": {"@id": "https://nexuslab.pl/#business"},
+        "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://nexuslab.pl{% static 'img/og-square.jpg' %}",
+            "width": 1200,
+            "height": 1200
+        },
+        "image": [
+            "https://nexuslab.pl{% static 'img/og-square.jpg' %}",
+            "https://nexuslab.pl{% static 'img/og-4x3.jpg' %}",
+            "https://nexuslab.pl{% static 'img/og-image.jpg' %}"
+        ]
+        },
+        {
         "@type": "ProfessionalService",
+        "@id": "https://nexuslab.pl/#business",
         "name": "NexusLab",
         "url": "https://nexuslab.pl/",
-        "image": "https://nexuslab.pl{% static 'img/og-image.jpg' %}",
+        "image": [
+            "https://nexuslab.pl{% static 'img/og-square.jpg' %}",
+            "https://nexuslab.pl{% static 'img/og-4x3.jpg' %}",
+            "https://nexuslab.pl{% static 'img/og-image.jpg' %}"
+        ],
         "email": "kontakt@nexuslab.pl",
         "telephone": "+48881957757",
         "areaServed": "PL",
@@ -41,6 +68,8 @@
             "jobTitle": "Automatyzacje i AI",
             "sameAs": ["https://github.com/zbigniew-szafranski"]
         }
+        }
+        ]
     }
     </script>
 {% endblock %}

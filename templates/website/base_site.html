@@ -10,6 +10,15 @@
     <link rel="preload" href="{% static 'fonts/figtree-latin.woff2' %}" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="{% static 'css/site.css' %}">
     {% block meta %}{% endblock %}
+    <!-- Owner opt-out: open nexuslab.pl/?nie-licz-mnie once per browser (?licz-mnie undoes it).
+         Umami skips any browser with "umami.disabled" in localStorage. Runs before the tracker. -->
+    <script>
+        try {
+            var q = location.search;
+            if (q.indexOf('nie-licz-mnie') > -1) localStorage.setItem('umami.disabled', '1');
+            else if (q.indexOf('licz-mnie') > -1) localStorage.removeItem('umami.disabled');
+        } catch (e) {}
+    </script>
     <!-- Umami (self-hosted, cookieless) - see /polityka-prywatnosci/; data-domains skips local dev -->
     <script defer src="https://stats.nexuslab.pl/script.js" data-website-id="5fb5f689-9a23-439a-8055-43490e86194f" data-domains="nexuslab.pl"></script>
     <script defer src="https://unpkg.com/htmx.org@1.9.10"></script>

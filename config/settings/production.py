@@ -27,3 +27,11 @@ LOGGING = {
         },
     },
 }
+
+# Hashed static file names (site.3f2a9c.css) so WhiteNoise can serve them with a one-year
+# immutable cache; a changed file gets a new name, so browsers never see a stale copy.
+# Original names are kept too, so old absolute links (e.g. og:image shared earlier) still work.
+STORAGES = {
+    'default': {'BACKEND': 'django.core.files.storage.FileSystemStorage'},
+    'staticfiles': {'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage'},
+}

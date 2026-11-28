@@ -126,7 +126,7 @@ def home(request):
 
 
 def privacy(request):
-    return render(request, 'website/privacy.html', {'updated': '18 października 2026'})
+    return render(request, 'website/privacy.html', {'updated': '28 listopada 2026'})
 
 
 def robots_txt(request):
@@ -146,7 +146,6 @@ SITEMAP_PAGES = [
     ('/realizacje/flowmail/', 'website/case_flowmail.html'),
     ('/realizacje/zamowienia-b2b/', 'website/case_zamowienia_b2b.html'),
     ('/realizacje/zamawianie-posilkow/', 'website/case_posilki.html'),
-    ('/cennik/', 'website/pricing.html'),
     ('/polityka-prywatnosci/', 'website/privacy.html'),
 ]
 

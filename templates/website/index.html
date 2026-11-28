@@ -85,7 +85,7 @@
             <h1>Mniej ręcznej roboty. Więcej czasu <em>na klientów.</em></h1>
             <p class="m-lead">Projektujemy aplikacje, automatyzacje i rozwiązania AI, które usprawniają codzienną pracę firm.</p>
             <div class="m-ctas">
-                <a href="#kontakt" class="m-btn">Umów bezpłatną rozmowę</a>
+                <a href="#kontakt" data-umami-event="CTA: rozmowa" class="m-btn">Umów bezpłatną rozmowę</a>
                 <a href="#projekty" class="m-btn-ghost">Zobacz realizacje</a>
             </div>
             <p class="m-byline">
@@ -183,7 +183,7 @@
                     <div><b>400+</b><span>maili i newsletterów</span></div>
                 </div>
                 <div class="m-case-actions">
-                    <a class="m-btn sm" href="#kontakt">Porozmawiajmy o podobnym rozwiązaniu</a>
+                    <a class="m-btn sm" href="#kontakt" data-umami-event="CTA: rozmowa">Porozmawiajmy o podobnym rozwiązaniu</a>
                     <a class="m-link" href="{% url 'website:case_flowmail' %}">Jak to działa: case study →</a>
                     <a class="m-link quiet" href="https://panelgw.com/" target="_blank" rel="noopener">Strona projektu ↗</a>
                     <details class="m-tech"><summary>Technologie</summary><p>Django · Claude · Qdrant · OpenAI Embeddings · Whisper · Docker</p></details>
@@ -227,7 +227,7 @@
                     <li>Rabaty i promocje</li><li>Punkty odbioru</li><li>Karty klientów</li><li>Zestawienia miesięczne</li><li>Ikona na telefonie</li>
                 </ul>
                 <div class="m-case-actions">
-                    <a class="m-btn sm" href="#kontakt">Porozmawiajmy o podobnym rozwiązaniu</a>
+                    <a class="m-btn sm" href="#kontakt" data-umami-event="CTA: rozmowa">Porozmawiajmy o podobnym rozwiązaniu</a>
                     <a class="m-link" href="{% url 'website:case_b2b_orders' %}">Jak to działa: case study →</a>
                     <details class="m-tech"><summary>Technologie</summary><p>FastAPI · SQLite · aplikacja PWA · import i eksport XLSX · Docker</p></details>
                 </div>
@@ -259,7 +259,7 @@
                     <li>Saldo i przypomnienia</li><li>Oceny dań</li><li>Porcje dla kuchni</li><li>Panel administratora</li>
                 </ul>
                 <div class="m-case-actions">
-                    <a class="m-btn sm" href="#kontakt">Porozmawiajmy o podobnym rozwiązaniu</a>
+                    <a class="m-btn sm" href="#kontakt" data-umami-event="CTA: rozmowa">Porozmawiajmy o podobnym rozwiązaniu</a>
                     <a class="m-link" href="{% url 'website:case_meal_orders' %}">Jak to działa: case study →</a>
                     <a class="m-link quiet" href="#opinie-posilki">Opinie rodziców ↓</a>
                     <details class="m-tech"><summary>Technologie</summary><p>FastAPI · SQLite · Google Apps Script · Amazon SES · Docker</p></details>
@@ -285,7 +285,7 @@
                         <p class="m-tag">Apteka · Automatyzacja</p>
                         <h4>Asystent telefoniczny apteki</h4>
                         <p>Asystent głosowy odbiera telefon, rozmowa trafia do arkusza, a gdy trzeba oddzwonić, farmaceuta dostaje SMS z imieniem, numerem i sprawą.</p>
-                        <div class="m-card-links"><a class="m-link" href="#kontakt">Porozmawiajmy o podobnym rozwiązaniu →</a></div>
+                        <div class="m-card-links"><a class="m-link" href="#kontakt" data-umami-event="CTA: rozmowa">Porozmawiajmy o podobnym rozwiązaniu →</a></div>
                     </div>
                 </article>
                 <article class="m-card" data-cat="app">
@@ -294,7 +294,7 @@
                         <p class="m-tag">Dokumenty · Program na komputer</p>
                         <h4>PDF do Worda</h4>
                         <p>Zdjęcie lub skan pisma zamienia się w edytowalny dokument Word z zachowanym układem. Dokumenty nie opuszczają komputera.</p>
-                        <div class="m-card-links"><a class="m-link" href="#kontakt">Porozmawiajmy o podobnym rozwiązaniu →</a></div>
+                        <div class="m-card-links"><a class="m-link" href="#kontakt" data-umami-event="CTA: rozmowa">Porozmawiajmy o podobnym rozwiązaniu →</a></div>
                     </div>
                 </article>
                 <article class="m-card" data-cat="app">
@@ -308,7 +308,7 @@
                         <div class="row"><p class="m-tag">Nieruchomości · Aplikacja</p><span class="m-status own">Własny produkt</span></div>
                         <h4>Gratka Alerts</h4>
                         <p>Ustawiasz kryteria mieszkania, a system co godzinę sprawdza nowe ogłoszenia i wysyła email o pasujących ofertach.</p>
-                        <div class="m-card-links"><a class="m-link" href="#kontakt">Porozmawiajmy o podobnym rozwiązaniu →</a><a class="m-link quiet" href="https://gratka.nexuslab.pl">Otwórz aplikację ↗</a></div>
+                        <div class="m-card-links"><a class="m-link" href="#kontakt" data-umami-event="CTA: rozmowa">Porozmawiajmy o podobnym rozwiązaniu →</a><a class="m-link quiet" href="https://gratka.nexuslab.pl">Otwórz aplikację ↗</a></div>
                     </div>
                 </article>
                 <article class="m-card" data-cat="web">
@@ -317,7 +317,7 @@
                         <div class="row"><p class="m-tag">Nieruchomości · Strona</p><span class="m-status wip">W trakcie wdrożenia</span></div>
                         <h4>sprzedajm.pl</h4>
                         <p>Strona prowadzi sprzedającego do quizu wyceny, a zgłoszenie trafia mailem do handlowca.</p>
-                        <div class="m-card-links"><a class="m-link" href="#kontakt">Porozmawiajmy o podobnym rozwiązaniu →</a><a class="m-link quiet" href="https://sprzedajm.pl/" target="_blank" rel="noopener">Odwiedź stronę ↗</a></div>
+                        <div class="m-card-links"><a class="m-link" href="#kontakt" data-umami-event="CTA: rozmowa">Porozmawiajmy o podobnym rozwiązaniu →</a><a class="m-link quiet" href="https://sprzedajm.pl/" target="_blank" rel="noopener">Odwiedź stronę ↗</a></div>
                     </div>
                 </article>
                 <article class="m-card" data-cat="auto">
@@ -326,7 +326,7 @@
                         <div class="row"><p class="m-tag">Finanse · Automatyzacja</p><span class="m-status own">Projekt własny</span></div>
                         <h4>Asystent wydatków</h4>
                         <p>Głosówka, zdjęcie paragonu albo krótka wiadomość wystarczy, żeby wydatek trafił do arkusza.</p>
-                        <div class="m-card-links"><a class="m-link" href="#kontakt">Porozmawiajmy o podobnym rozwiązaniu →</a></div>
+                        <div class="m-card-links"><a class="m-link" href="#kontakt" data-umami-event="CTA: rozmowa">Porozmawiajmy o podobnym rozwiązaniu →</a></div>
                     </div>
                 </article>
                 <article class="m-card" data-cat="auto">
@@ -335,14 +335,14 @@
                         <div class="row"><p class="m-tag">Dom · Automatyzacja</p><span class="m-status own">Projekt własny</span></div>
                         <h4>Wspólna lista zakupów</h4>
                         <p>Lista prowadzona tekstem lub głosem z komunikatora, z cotygodniowym przypomnieniem.</p>
-                        <div class="m-card-links"><a class="m-link" href="#kontakt">Porozmawiajmy o podobnym rozwiązaniu →</a></div>
+                        <div class="m-card-links"><a class="m-link" href="#kontakt" data-umami-event="CTA: rozmowa">Porozmawiajmy o podobnym rozwiązaniu →</a></div>
                     </div>
                 </article>
             </div>
             <button type="button" class="m-btn-ghost m-showall" data-show-all="work-grid">Pokaż wszystkie (6)</button>
             <div class="m-banner">
                 <div><h4>Twój proces może być następny</h4><p>Opisz, co zabiera Ci najwięcej czasu. Powiem wprost, czy warto to zautomatyzować.</p></div>
-                <a class="m-btn" href="#kontakt">Umów bezpłatną rozmowę</a>
+                <a class="m-btn" href="#kontakt" data-umami-event="CTA: rozmowa">Umów bezpłatną rozmowę</a>
             </div>
         </div>
     </div>
@@ -434,7 +434,7 @@
         <div class="m-faq-aside">
             <p class="m-eyebrow"><span class="dot"></span>Pytania</p>
             <h2 class="m-h2">Najczęstsze pytania</h2>
-            <p>Nie ma tu Twojego pytania? Zadzwoń: <a href="tel:+48881957757">881 957 757</a></p>
+            <p>Nie ma tu Twojego pytania? Zadzwoń: <a href="tel:+48881957757" data-umami-event="Telefon">881 957 757</a></p>
         </div>
         <div>
             {% for item in faq %}
@@ -460,8 +460,8 @@
                 <h2>Porozmawiajmy o tym, co zabiera Ci najwięcej czasu</h2>
                 <p>Napisz kilka zdań o swoim procesie albo zadzwoń. Rozmowa jest bezpłatna.</p>
                 <div class="m-direct">
-                    <div><small>Telefon</small><b><a href="tel:+48881957757">881 957 757</a></b></div>
-                    <div><small>Email</small><b><a href="mailto:kontakt@nexuslab.pl">kontakt@nexuslab.pl</a></b></div>
+                    <div><small>Telefon</small><b><a href="tel:+48881957757" data-umami-event="Telefon">881 957 757</a></b></div>
+                    <div><small>Email</small><b><a href="mailto:kontakt@nexuslab.pl" data-umami-event="Email">kontakt@nexuslab.pl</a></b></div>
                 </div>
             </div>
             {% include "website/partials/contact_form.html" %}

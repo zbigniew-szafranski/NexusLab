@@ -2,8 +2,11 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import RedirectView
 
+from apps.website.views import pricing
+
 urlpatterns = [
     path('', include('apps.gratka.urls')),
+    path('cennik/', pricing, name='gratka_pricing'),
     path('gratka/', RedirectView.as_view(url='/', permanent=False)),
     path('accounts/signup/', RedirectView.as_view(url='/accounts/login/', permanent=False)),
     path('accounts/', include('allauth.urls')),

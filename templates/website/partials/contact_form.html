@@ -3,6 +3,7 @@
     <div class="m-form" role="status">
         <p class="m-form-ok">Dziękuję za wiadomość!</p>
         <p>Odpowiem najszybciej, jak to możliwe, zwykle w ciągu jednego dnia roboczego.</p>
+        <script>window.umami && umami.track('Formularz wysłany');</script>
     </div>
 {% else %}
     <form hx-post="{% url 'website:contact' %}" hx-target="#contact-form-wrapper" hx-swap="outerHTML" class="m-form">

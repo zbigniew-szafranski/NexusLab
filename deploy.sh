@@ -8,6 +8,9 @@ set -e
 
 PROJECT_DIR="/var/www/nexuslab"
 VENV="$PROJECT_DIR/venv/bin"
+# manage.py defaults to config.settings.base; collectstatic must use production settings
+# (hashed static files + manifest), the same ones gunicorn runs with.
+export DJANGO_SETTINGS_MODULE=config.settings.production
 
 echo "=========================================="
 echo "  NexusLab - Deploy"

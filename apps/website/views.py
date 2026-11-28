@@ -58,7 +58,8 @@ FAQ = [
     {
         'q': 'Czy pracujesz zdalnie?',
         'a': 'Tak. Rozmowy, wdrożenie i wsparcie mogę prowadzić zdalnie, dla klientów z całej Polski. '
-             'Jeśli wolisz porozmawiać twarzą w twarz, chętnie spotkam się na żywo: bardzo lubię '
+             'Jeśli jesteś z Wrocławia lub okolic i wolisz porozmawiać twarzą w twarz, chętnie spotkam '
+             'się na żywo: bardzo lubię '
              'kontakt z ludźmi, a przy kawie często łatwiej zrozumieć, co naprawdę jest do zrobienia.',
     },
 ]

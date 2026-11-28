@@ -1,0 +1,56 @@
+{% extends "website/base_site.html" %}
+{% load static %}
+
+{% block head_title %}Usługi: automatyzacje n8n, AI dla sprzedaży, aplikacje | NexusLab{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Automatyzacje n8n, asystenci AI dla sprzedaży, aplikacje do zamówień i asystent głosowy AI. Rozwiązania dla firm, które sprzedają i obsługują klientów. Wrocław i cała Polska.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://nexuslab.pl/uslugi/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="NexusLab">
+    <meta property="og:url" content="https://nexuslab.pl/uslugi/">
+    <meta property="og:title" content="Usługi NexusLab: automatyzacje, AI i aplikacje dla firm">
+    <meta property="og:description" content="Automatyzacje n8n, asystenci AI dla sprzedaży, aplikacje do zamówień i asystent głosowy AI.">
+    <meta property="og:image" content="https://nexuslab.pl{% static 'img/og-image.jpg' %}">
+    <script type="application/ld+json">{{ schema }}</script>
+{% endblock %}
+
+{% block content %}
+
+<section class="m-cs m-svc">
+    <header class="m-cs-hero">
+        <div class="m-in">
+            <nav class="m-crumbs" aria-label="Okruszki">
+                <a href="/">NexusLab</a><span aria-hidden="true">/</span><span aria-current="page">Usługi</span>
+            </nav>
+            <p class="m-tag">Usługi</p>
+            <h1>W czym mogę pomóc Twojej firmie</h1>
+            <p class="m-cs-lead">Przejmuję powtarzalną pracę w sprzedaży i obsłudze klienta: maile, zamówienia, telefony, przepisywanie danych. Każda usługa opiera się na rozwiązaniach, które już działają u klientów albo w moich własnych projektach.</p>
+        </div>
+    </header>
+
+    <div class="m-in">
+        <div class="m-svc-grid">
+            {% for s in services %}
+            <a class="m-svc-ex" href="{% url 'website:service_detail' s.slug %}">
+                <p class="m-tag">{{ s.eyebrow|cut:"Usługa · " }}</p>
+                <h2>{{ s.nav }}</h2>
+                <p>{{ s.card }}</p>
+                <span class="m-link">Szczegóły →</span>
+            </a>
+            {% endfor %}
+        </div>
+
+        <aside class="m-banner m-cs-cta m-svc-hubcta">
+            <div>
+                <h2>Nie wiesz, czego potrzebujesz?</h2>
+                <p>Opisz, co zabiera Ci najwięcej czasu. Powiem wprost, czy warto to zautomatyzować, a jeśli nie, też to usłyszysz.</p>
+            </div>
+            <a href="/#kontakt" class="m-btn" data-umami-event="CTA: rozmowa">Umów bezpłatną rozmowę</a>
+        </aside>
+    </div>
+</section>
+
+{% endblock %}

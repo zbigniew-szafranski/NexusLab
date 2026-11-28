@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from django.conf import settings
 from django.core.cache import cache
 from django.core.mail import EmailMessage
-from django.http import HttpResponse
+from django.http import Http404, HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
 from django.utils.safestring import mark_safe
@@ -15,6 +15,7 @@ from django.views.decorators.http import require_POST
 from apps.subscriptions.models import Plan
 
 from .forms import ContactForm
+from .services import PROCESS, SERVICES, SERVICES_BY_SLUG
 
 logger = logging.getLogger(__name__)
 
@@ -159,10 +160,28 @@ def _template_lastmod(template_name):
         return None
 
 
+def _file_lastmod(path):
+    try:
+        return datetime.fromtimestamp(os.path.getmtime(path), tz=timezone.utc).date().isoformat()
+    except OSError:
+        return None
+
+
+def _sitemap_entries():
+    yield from ((path, _template_lastmod(tpl)) for path, tpl in SITEMAP_PAGES)
+    # Service pages: content lives in services.py, layout in service_detail.html - take the newer date
+    services_mod = max(filter(None, [
+        _file_lastmod(os.path.join(os.path.dirname(__file__), 'services.py')),
+        _template_lastmod('website/service_detail.html'),
+    ]), default=None)
+    yield '/uslugi/', max(filter(None, [services_mod, _template_lastmod('website/services.html')]), default=None)
+    for svc in SERVICES:
+        yield f"/uslugi/{svc['slug']}/", services_mod
+
+
 def sitemap_xml(request):
     urls = ''
-    for path, template_name in SITEMAP_PAGES:
-        lastmod = _template_lastmod(template_name)
+    for path, lastmod in _sitemap_entries():
         lastmod_tag = f'<lastmod>{lastmod}</lastmod>' if lastmod else ''
         urls += f'<url><loc>https://nexuslab.pl{path}</loc>{lastmod_tag}</url>'
     xml = (
@@ -170,6 +189,66 @@ def sitemap_xml(request):
         f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>'
     )
     return HttpResponse(xml, content_type='application/xml')
+
+
+def _json_ld(data):
+    # Escape "<" so the JSON can't close the surrounding <script> tag
+    return mark_safe(json.dumps(data, ensure_ascii=False).replace('<', '\\u003c'))
+
+
+def services(request):
+    schema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+            {'@type': 'ListItem', 'position': 1, 'name': 'NexusLab', 'item': 'https://nexuslab.pl/'},
+            {'@type': 'ListItem', 'position': 2, 'name': 'Usługi', 'item': 'https://nexuslab.pl/uslugi/'},
+        ],
+    }
+    return render(request, 'website/services.html', {'services': SERVICES, 'schema': _json_ld(schema)})
+
+
+def service_detail(request, slug):
+    service = SERVICES_BY_SLUG.get(slug)
+    if service is None:
+        raise Http404
+    url = f'https://nexuslab.pl/uslugi/{slug}/'
+    schema = {
+        '@context': 'https://schema.org',
+        '@graph': [
+            {
+                '@type': 'Service',
+                'name': service['nav'],
+                'description': service['description'],
+                'url': url,
+                'areaServed': 'PL',
+                'provider': {'@type': 'ProfessionalService', '@id': 'https://nexuslab.pl/#business',
+                             'name': 'NexusLab', 'url': 'https://nexuslab.pl/'},
+            },
+            {
+                '@type': 'FAQPage',
+                'mainEntity': [
+                    {'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}}
+                    for q, a in service['faq']
+                ],
+            },
+            {
+                '@type': 'BreadcrumbList',
+                'itemListElement': [
+                    {'@type': 'ListItem', 'position': 1, 'name': 'NexusLab', 'item': 'https://nexuslab.pl/'},
+                    {'@type': 'ListItem', 'position': 2, 'name': 'Usługi', 'item': 'https://nexuslab.pl/uslugi/'},
+                    {'@type': 'ListItem', 'position': 3, 'name': service['nav'], 'item': url},
+                ],
+            },
+        ],
+    }
+    return render(request, 'website/service_detail.html', {
+        'service': service,
+        'page_url': url,
+        'process': PROCESS,
+        'other_services': [s for s in SERVICES if s['slug'] != slug],
+        'schema': _json_ld(schema),
+    })
 
 
 def case_flowmail(request):

@@ -1,0 +1,113 @@
+{% extends "website/base_site.html" %}
+{% load static %}
+
+{% block head_title %}{{ service.head_title }} | NexusLab{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="{{ service.description }}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="{{ page_url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="NexusLab">
+    <meta property="og:url" content="{{ page_url }}">
+    <meta property="og:title" content="{{ service.title }}">
+    <meta property="og:description" content="{{ service.description }}">
+    <meta property="og:image" content="https://nexuslab.pl{% static 'img/og-image.jpg' %}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ service.title }}">
+    <meta name="twitter:description" content="{{ service.description }}">
+    <meta name="twitter:image" content="https://nexuslab.pl{% static 'img/og-image.jpg' %}">
+    <script type="application/ld+json">{{ schema }}</script>
+{% endblock %}
+
+{% block content %}
+
+<article class="m-cs m-svc">
+    <header class="m-cs-hero">
+        <div class="m-in">
+            <nav class="m-crumbs" aria-label="Okruszki">
+                <a href="/">NexusLab</a><span aria-hidden="true">/</span><a href="{% url 'website:services' %}">Usługi</a><span aria-hidden="true">/</span><span aria-current="page">{{ service.nav }}</span>
+            </nav>
+            <p class="m-tag">{{ service.eyebrow }}</p>
+            <h1>{{ service.title }}</h1>
+            <p class="m-cs-lead">{{ service.lead }}</p>
+            <div class="m-ctas">
+                <a href="/#kontakt" class="m-btn" data-umami-event="CTA: rozmowa">Umów bezpłatną rozmowę</a>
+                <a href="#przyklady" class="m-btn-ghost">Zobacz przykłady</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="m-in">
+        <div class="m-cs-body">
+            <section>
+                <h2>Brzmi znajomo?</h2>
+                <ul class="m-svc-pains">
+                    {% for p in service.pains %}<li>„{{ p }}”</li>{% endfor %}
+                </ul>
+            </section>
+
+            <section>
+                <h2>{{ service.offer_title }}</h2>
+                <ul class="m-cs-feats">
+                    {% for title, text in service.offer %}<li><b>{{ title }}</b>{{ text }}</li>{% endfor %}
+                </ul>
+            </section>
+
+            <section class="m-svc-why">
+                {% for title, text in service.why %}
+                <div><h3>{{ title }}</h3><p>{{ text }}</p></div>
+                {% endfor %}
+            </section>
+
+            <section id="przyklady">
+                <h2>{% if service.examples|length > 1 %}Przykłady wdrożeń{% else %}Przykład wdrożenia{% endif %}</h2>
+                <div class="m-svc-examples">
+                    {% for ex in service.examples %}
+                    <a class="m-svc-ex" href="{{ ex.url }}"{% if ex.url|slice:":4" == "http" %} target="_blank" rel="noopener"{% endif %}>
+                        <h3>{{ ex.title }}</h3>
+                        <p>{{ ex.text }}</p>
+                        <span class="m-link">{{ ex.label }} →</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section>
+                <h2>Jak wygląda współpraca</h2>
+                <ol class="m-cs-flow">
+                    {% for title, text in process %}<li><b>{{ title }}.</b> {{ text }}</li>{% endfor %}
+                </ol>
+            </section>
+
+            <section>
+                <h2>Pytania</h2>
+                <div class="m-svc-faq">
+                    {% for q, a in service.faq %}
+                    <details><summary>{{ q }}</summary><p>{{ a }}</p></details>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <aside class="m-banner m-cs-cta">
+                <div>
+                    <h2>{{ service.cta_title }}</h2>
+                    <p>{{ service.cta_text }}</p>
+                </div>
+                <a href="/#kontakt" class="m-btn" data-umami-event="CTA: rozmowa">Umów bezpłatną rozmowę</a>
+            </aside>
+
+            <section class="m-svc-other">
+                <h2>Inne usługi</h2>
+                <ul>
+                    {% for s in other_services %}<li><a class="m-link" href="{% url 'website:service_detail' s.slug %}">{{ s.nav }} →</a></li>{% endfor %}
+                </ul>
+            </section>
+        </div>
+    </div>
+</article>
+
+{% endblock %}

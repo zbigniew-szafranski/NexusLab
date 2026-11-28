@@ -399,3 +399,8 @@ body.site {
 .m-cs-feats li { background: var(--m-white); border: 1px solid var(--m-line); border-left: 3px solid var(--m-ember); border-radius: 12px; padding: 14px 16px; font-size: 15px; }
 .m-cs-feats b { display: block; color: var(--m-ink); font-size: 16.5px; margin-bottom: 2px; }
 .m-cs-body section > ol + p, .m-cs-body section > ul + p { margin-top: 16px !important; }
+.m-cs-status { margin-top: 14px !important; }
+.m-cs-video { background: var(--m-tint); border-radius: 20px; padding: 22px; }
+.m-cs-video video { width: 100%; border-radius: 12px; box-shadow: 0 24px 50px -26px rgba(14,26,43,.5); }
+.m-cs-feats.three, .m-cs-feats.three { grid-template-columns: 1fr !important; }
+.m-cs-body .m-qcols { margin-top: 20px; }

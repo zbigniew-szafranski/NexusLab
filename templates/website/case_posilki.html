@@ -1,0 +1,166 @@
+{% extends "website/base_site.html" %}
+{% load static %}
+
+{% block head_title %}System zamawiania posiłków dla szkoły i przedszkola | NexusLab{% endblock %}
+
+{% block meta %}
+    {% with title="System zamawiania posiłków: rodzice zamawiają z telefonu, kuchnia wie, ile porcji przygotować" description="Case study: aplikacja do zamawiania obiadów w szkole. Zamiast ankiety Google i liczenia ręcznie: zamówienia na cały tydzień, saldo odliczane automatycznie, wydawanie posiłków na tablecie i oceny dań. Rodzice oceniają ją średnio na 4,9 / 5." url="https://nexuslab.pl/realizacje/zamawianie-posilkow/" %}
+    <meta name="description" content="{{ description }}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="{{ url }}">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="NexusLab">
+    <meta property="og:url" content="{{ url }}">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="https://nexuslab.pl{% static 'img/obiady.jpg' %}">
+    <meta property="og:image:alt" content="System zamawiania posiłków na telefonie (dane demo)">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ description }}">
+    <meta name="twitter:image" content="https://nexuslab.pl{% static 'img/obiady.jpg' %}">
+    {% endwith %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+        {
+            "@type": "Article",
+            "@id": "https://nexuslab.pl/realizacje/zamawianie-posilkow/#article",
+            "headline": "System zamawiania posiłków: rodzice zamawiają z telefonu, kuchnia wie, ile porcji przygotować",
+            "description": "Case study aplikacji do zamawiania posiłków w szkole.",
+            "inLanguage": "pl-PL",
+            "mainEntityOfPage": "https://nexuslab.pl/realizacje/zamawianie-posilkow/",
+            "image": ["https://nexuslab.pl{% static 'img/obiady.jpg' %}"],
+            "datePublished": "2026-11-28",
+            "author": {"@type": "Person", "name": "Zbigniew Szafrański", "url": "https://nexuslab.pl/"},
+            "publisher": {"@type": "Organization", "name": "NexusLab", "url": "https://nexuslab.pl/"}
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "NexusLab", "item": "https://nexuslab.pl/"},
+                {"@type": "ListItem", "position": 2, "name": "Realizacje", "item": "https://nexuslab.pl/#projekty"},
+                {"@type": "ListItem", "position": 3, "name": "Zamawianie posiłków", "item": "https://nexuslab.pl/realizacje/zamawianie-posilkow/"}
+            ]
+        }
+        ]
+    }
+    </script>
+{% endblock %}
+
+{% block content %}
+
+<article class="m-cs">
+    <header class="m-cs-hero">
+        <div class="m-in">
+            <nav class="m-crumbs" aria-label="Okruszki">
+                <a href="/">NexusLab</a><span aria-hidden="true">/</span><a href="/#projekty">Realizacje</a><span aria-hidden="true">/</span><span aria-current="page">Zamawianie posiłków</span>
+            </nav>
+            <p class="m-tag">Case study · Szkoły i przedszkola · Aplikacja webowa</p>
+            <h1>System zamawiania posiłków: rodzice zamawiają z&nbsp;telefonu, kuchnia wie, ile porcji przygotować</h1>
+            <p class="m-cs-lead">Zamiast ankiety Google i&nbsp;liczenia zamówień ręcznie: rodzic wybiera zupę i&nbsp;drugie danie na cały tydzień, opłata odlicza się sama z&nbsp;salda, a&nbsp;kuchnia ma gotową listę porcji i&nbsp;wydaje posiłki z&nbsp;tabletu.</p>
+            <div class="m-stats">
+                <div><b>{{ meal_rating.average }} / 5</b><span>średnia z {{ meal_rating.count }} ocen rodziców</span></div>
+                <div><b>3</b><span>panele: rodzic, kuchnia, administrator</span></div>
+            </div>
+            <p class="m-cs-status"><span class="m-status">Działa na co dzień w placówce</span></p>
+        </div>
+    </header>
+
+    <div class="m-in">
+        <figure class="m-cs-shot m-cs-video">
+            <video width="960" height="600" muted loop playsinline autoplay preload="metadata"
+                   poster="{% static 'img/obiady.jpg' %}"
+                   aria-label="System zamawiania posiłków na telefonie: pulpit rodzica z saldem, zamawianie na tydzień, oceny dań, wydawanie posiłków i ranking dań dla kuchni (dane demo)">
+                <source src="{% static 'img/obiady.mp4' %}" type="video/mp4">
+            </video>
+            <figcaption class="m-caption">Nagranie z wersji demonstracyjnej · nazwa placówki ukryta · dane wymyślone</figcaption>
+        </figure>
+
+        <div class="m-cs-body">
+            <section>
+                <h2>Dla kogo</h2>
+                <p>Dla szkoły, w&nbsp;której rodzice zamawiają dzieciom obiady z&nbsp;wyprzedzeniem i&nbsp;płacą za nie z&nbsp;góry. Z&nbsp;aplikacji korzystają trzy grupy: rodzice, kuchnia i&nbsp;osoba, która organizuje posiłki w&nbsp;szkole.</p>
+            </section>
+
+            <section>
+                <h2>Problem</h2>
+                <p>Zamówienia zbierało się ankietą Google, a&nbsp;potem liczyło ręcznie: ile zup, ile drugich dań, kto zamówił, kto zapłacił. Każda zmiana w&nbsp;ostatniej chwili oznaczała poprawki w&nbsp;arkuszu, a&nbsp;rozliczenia wpłat gotówkowych trzeba było prowadzić osobno.</p>
+                <p>Rodzice nie widzieli, ile mają jeszcze na koncie ani czy dziecko faktycznie zjadło obiad. Kuchnia nie wiedziała, które dania smakują dzieciom, a&nbsp;które nie.</p>
+            </section>
+
+            <section>
+                <h2>Rozwiązanie</h2>
+                <p>Jedna aplikacja, którą rodzic otwiera na telefonie jak zwykłą stronę albo dodaje jako ikonę na ekran główny. Każdy widzi tylko to, czego potrzebuje:</p>
+                <ul class="m-cs-feats three">
+                    <li><b>Rodzic</b>zamawia zupę i&nbsp;drugie danie na cały tydzień, widzi saldo i&nbsp;wyciąg, wie, że dziecko zjadło, i&nbsp;ocenia dania</li>
+                    <li><b>Kuchnia</b>ma listę porcji na każdy dzień, odhacza wydane posiłki na tablecie i&nbsp;przyjmuje wpłaty gotówkowe</li>
+                    <li><b>Organizator</b>zarządza jadłospisem, rodzinami, cenami i&nbsp;terminami, wysyła zaproszenia, przypomnienia i&nbsp;newslettery</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Jak to działa na co dzień</h2>
+                <ol class="m-cs-flow">
+                    <li><b>Jadłospis.</b> Organizator wpisuje menu na tydzień. Kuchnia może też wydrukować je jako PDF.</li>
+                    <li><b>Zamówienia.</b> Rodzic wybiera dania dla każdego dziecka do ustalonego terminu. Każda zmiana zapisuje się w&nbsp;historii.</li>
+                    <li><b>Saldo.</b> Rodzic wpłaca gotówkę w&nbsp;kuchni, a&nbsp;kuchnia wpisuje kwotę. Każdy zamówiony posiłek odlicza się automatycznie. Przy niskim saldzie rodzic widzi ostrzeżenie i&nbsp;dostaje maila.</li>
+                    <li><b>Porcje.</b> Kuchnia widzi, ile czego przygotować na dany dzień, bez liczenia ręcznie.</li>
+                    <li><b>Wydawanie.</b> Przy wydawaniu obiadów kuchnia odhacza dzieci na tablecie. Rodzic widzi, że dziecko zjadło.</li>
+                    <li><b>Oceny.</b> Rodzic ocenia dania w&nbsp;skali 1–5 i&nbsp;pisze, co dziecku smakowało. Uwagi krytyczne trafiają najpierw do organizatora, który decyduje, co przekazać kuchni.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Szczegóły, które robią różnicę</h2>
+                <ul class="m-cs-list">
+                    <li>dziecko może mieć dwoje rodziców z&nbsp;osobnymi kontami: obaj widzą to samo saldo, a&nbsp;płaci się raz</li>
+                    <li>ranking dań dla kuchni na podstawie ocen dzieci</li>
+                    <li>newsletter do rodziców, który organizator może podyktować głosem, a&nbsp;AI przygotuje z&nbsp;tego tekst do poprawienia</li>
+                    <li>dane w&nbsp;arkuszu Google aktualizują się same, dla osób, które wolą pracować w&nbsp;arkuszu</li>
+                    <li>rozliczenie gotówki przekazanej kuchni, z&nbsp;wydrukiem</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Opinie rodziców</h2>
+                <div class="m-qcols">
+                    {% for r in meal_reviews %}
+                    <figure class="m-q m-qs">
+                        <span class="m-stars" role="img" aria-label="5 na 5 gwiazdek">★★★★★</span>
+                        <blockquote>„{{ r.quote }}”</blockquote>
+                        <figcaption><span class="ini" aria-hidden="true">{{ r.name|first }}</span><span><b>{{ r.name }}</b><span>rodzic</span></span></figcaption>
+                    </figure>
+                    {% endfor %}
+                </div>
+                <p class="m-qnote">Opinie z aplikacji, z poprawioną jedynie pisownią. Średnia {{ meal_rating.average }} / 5 obejmuje wszystkie {{ meal_rating.count }} ocen, także te bez komentarza.</p>
+            </section>
+
+            <section>
+                <h2>Technologie</h2>
+                <ul class="m-cs-tech">
+                    <li><b>FastAPI</b>serwer aplikacji</li>
+                    <li><b>SQLite</b>zamówienia, salda, oceny</li>
+                    <li><b>Google Apps Script</b>arkusz Google aktualizowany automatycznie</li>
+                    <li><b>Amazon SES</b>maile: przypomnienia, ostrzeżenia o&nbsp;saldzie, newslettery</li>
+                    <li><b>Claude + Whisper</b>asystent newslettera z&nbsp;dyktowaniem</li>
+                    <li><b>Docker</b>wdrożenie na serwerze, kopie zapasowe</li>
+                </ul>
+            </section>
+
+            <aside class="m-banner m-cs-cta">
+                <div>
+                    <h2>Zbieracie zamówienia ankietą albo na kartkach?</h2>
+                    <p>Podobny system da się zbudować dla szkoły, przedszkola, stołówki albo firmowej kuchni. Zacznijmy od bezpłatnej rozmowy.</p>
+                </div>
+                <a href="/#kontakt" class="m-btn">Umów bezpłatną rozmowę</a>
+            </aside>
+
+            <p class="m-cs-back"><a class="m-link" href="/#projekty">← Wszystkie realizacje</a> <span class="sep">·</span> <a class="m-link quiet" href="{% url 'website:case_flowmail' %}">Case study: Flowmail →</a> <span class="sep">·</span> <a class="m-link quiet" href="{% url 'website:case_b2b_orders' %}">Case study: Zamówienia B2B →</a></p>
+        </div>
+    </div>
+</article>
+
+{% endblock %}

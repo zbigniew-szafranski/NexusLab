@@ -145,6 +145,7 @@ SITEMAP_PAGES = [
     ('/', 'website/index.html'),
     ('/realizacje/flowmail/', 'website/case_flowmail.html'),
     ('/realizacje/zamowienia-b2b/', 'website/case_zamowienia_b2b.html'),
+    ('/realizacje/zamawianie-posilkow/', 'website/case_posilki.html'),
     ('/cennik/', 'website/pricing.html'),
     ('/polityka-prywatnosci/', 'website/privacy.html'),
 ]
@@ -178,6 +179,13 @@ def case_flowmail(request):
 
 def case_b2b_orders(request):
     return render(request, 'website/case_zamowienia_b2b.html')
+
+
+def case_meal_orders(request):
+    return render(request, 'website/case_posilki.html', {
+        'meal_reviews': MEAL_REVIEWS,
+        'meal_rating': MEAL_RATING,
+    })
 
 
 def pricing(request):

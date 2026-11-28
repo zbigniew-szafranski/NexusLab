@@ -1,0 +1,169 @@
+{% extends "website/base_site.html" %}
+{% load static %}
+
+{% block head_title %}Aplikacja do zamówień B2B dla handlowców w terenie | NexusLab{% endblock %}
+
+{% block meta %}
+    {% with title="Zamówienia B2B z telefonu: handlowiec składa zamówienie na poboczu, a nie przy laptopie" description="Case study: aplikacja na telefon do składania zamówień do hurtowni. Zamiast laptopa i pliku Excel z ponad 400 produktami: wyszukiwarka, TOP 50, krótkie daty, ceny netto i SCD, a mail z Excelem do hurtowni wysyła się sam." url="https://nexuslab.pl/realizacje/zamowienia-b2b/" %}
+    <meta name="description" content="{{ description }}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="{{ url }}">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="NexusLab">
+    <meta property="og:url" content="{{ url }}">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="https://nexuslab.pl{% static 'img/og-image.jpg' %}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ description }}">
+    <meta name="twitter:image" content="https://nexuslab.pl{% static 'img/og-image.jpg' %}">
+    {% endwith %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+        {
+            "@type": "Article",
+            "@id": "https://nexuslab.pl/realizacje/zamowienia-b2b/#article",
+            "headline": "Zamówienia B2B z telefonu: handlowiec składa zamówienie na poboczu, a nie przy laptopie",
+            "description": "Case study aplikacji na telefon do składania zamówień do hurtowni w branży farmaceutycznej.",
+            "inLanguage": "pl-PL",
+            "mainEntityOfPage": "https://nexuslab.pl/realizacje/zamowienia-b2b/",
+            "image": ["https://nexuslab.pl{% static 'img/og-image.jpg' %}"],
+            "datePublished": "2026-11-28",
+            "author": {"@type": "Person", "name": "Zbigniew Szafrański", "url": "https://nexuslab.pl/"},
+            "publisher": {"@type": "Organization", "name": "NexusLab", "url": "https://nexuslab.pl/"}
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "NexusLab", "item": "https://nexuslab.pl/"},
+                {"@type": "ListItem", "position": 2, "name": "Realizacje", "item": "https://nexuslab.pl/#projekty"},
+                {"@type": "ListItem", "position": 3, "name": "Zamówienia B2B", "item": "https://nexuslab.pl/realizacje/zamowienia-b2b/"}
+            ]
+        }
+        ]
+    }
+    </script>
+{% endblock %}
+
+{% block content %}
+
+<article class="m-cs">
+    <header class="m-cs-hero">
+        <div class="m-in">
+            <nav class="m-crumbs" aria-label="Okruszki">
+                <a href="/">NexusLab</a><span aria-hidden="true">/</span><a href="/#projekty">Realizacje</a><span aria-hidden="true">/</span><span aria-current="page">Zamówienia B2B</span>
+            </nav>
+            <p class="m-tag">Case study · Branża farmaceutyczna · Zamówienia B2B</p>
+            <h1>Zamówienie do hurtowni z&nbsp;telefonu, na poboczu drogi</h1>
+            <p class="m-cs-lead">Handlowiec w&nbsp;trasie nie musi już zjeżdżać na parking, otwierać laptopa i&nbsp;szukać produktów w&nbsp;Excelu. Zamówienie od klienta składa w&nbsp;aplikacji na telefonie albo tablecie, a&nbsp;hurtownia od razu dostaje maila z&nbsp;gotowym plikiem.</p>
+            <div class="m-stats">
+                <div><b>6 → 4</b><span>kroki do wysłania zamówienia</span></div>
+                <div><b>400+</b><span>produktów w jednym cenniku</span></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="m-in">
+        <figure class="m-cs-phone">
+            <div class="yg-stage">
+                <div class="yg-phone" role="img" aria-label="Ekran aplikacji zamówień B2B w widoku handlowca: filtr TOP 50, ceny netto, sugerowane ceny detaliczne i partia z krótką datą ważności (marka ukryta, dane przykładowe)">
+                    <div class="yg-top"><span class="yg-burger"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span><span class="yg-search">Szukaj produktu…</span></div>
+                    <div class="yg-client"><span>Dla: <b>Apteka Pod Lipami</b> · rabat 5%</span><span>zmień</span></div>
+                    <div class="yg-chips"><span>Wszystkie</span><span class="on">TOP 50</span><span>Krótkie daty</span><span>Promocje</span></div>
+                    <div class="yg-row sel"><div><span class="yg-badge top">TOP 1</span><b>Omega-3 1000 mg</b><small>Marka A · 60 kaps.</small><span class="pr"><strong>32,40 zł</strong> netto · SCD 59,99 zł</span><br><span class="yg-carton">+ karton (8 szt.)</span></div><div class="yg-step"><i>−</i><em>8</em><i class="plus">+</i></div></div>
+                    <div class="yg-row"><div><span class="yg-badge top">TOP 2</span><b>Witamina D3 2000 IU</b><small>Marka A · 90 kaps.</small><span class="yg-badge promo">-20% od 8 szt. do 30.11</span><br><span class="pr"><strong>24,90 zł</strong> netto · SCD 44,99 zł</span></div><div class="yg-step"><i>−</i><em>0</em><i class="plus">+</i></div></div>
+                    <div class="yg-row sel"><div><span class="yg-badge top">TOP 3</span><b>Magnez + B6</b><small>Marka A · 100 tabl.</small><span class="pr"><strong>18,90 zł</strong> netto · SCD 34,99 zł</span><div class="yg-short"><b>Krótka data −60%</b>ważne do 31.01 · stan 14 szt.<span class="pr"><strong>7,56 zł</strong> netto</span></div></div><div class="yg-step"><i>−</i><em>12</em><i class="plus">+</i></div></div>
+                    <div class="yg-bar"><div><b>486,00 zł</b><small>✓ Minimum 400,00 zł osiągnięte</small></div><span class="btn">Podsumowanie (2)</span></div>
+                </div>
+            </div>
+            <div class="yg-mail" aria-hidden="true"><b>Zamówienie wysłane</b>Mail do hurtowni z tabelą i plikiem Excel <span>✓</span></div>
+            <figcaption class="m-caption">Ekran odtworzony z aplikacji · marka klienta ukryta · dane przykładowe</figcaption>
+        </figure>
+
+        <div class="m-cs-body">
+            <section>
+                <h2>Dla kogo</h2>
+                <p>Dla firmy z&nbsp;branży farmaceutycznej, której handlowcy jeżdżą po aptekach i&nbsp;sklepach, oraz dla samych klientów, którzy chcą zamawiać bez dzwonienia do handlowca. Zamówienia trafiają do hurtowni, która je realizuje.</p>
+            </section>
+
+            <section>
+                <h2>Problem</h2>
+                <p>Klient dzwonił do handlowca, żeby złożyć zamówienie. Handlowiec zwykle był wtedy w&nbsp;trasie, więc musiał:</p>
+                <ol class="m-cs-flow m-cs-flow-plain">
+                    <li>zjechać z&nbsp;drogi i&nbsp;się zatrzymać,</li>
+                    <li>uruchomić laptopa i&nbsp;otworzyć plik Excel z&nbsp;cennikiem, mając nadzieję, że to aktualna wersja,</li>
+                    <li>w&nbsp;gąszczu ponad 400 pozycji znaleźć produkty, o&nbsp;które prosił klient,</li>
+                    <li>pilnować rabatu klienta, promocji i&nbsp;minimum logistycznego,</li>
+                    <li>napisać maila do hurtowni,</li>
+                    <li>dołączyć plik Excel i&nbsp;wysłać.</li>
+                </ol>
+                <p>Jedno zamówienie zajmowało dużo czasu i&nbsp;wybijało z&nbsp;rytmu dnia. W&nbsp;arkuszu łatwo też o&nbsp;pomyłkę: zły wiersz, stara cena albo zapomniany rabat.</p>
+            </section>
+
+            <section>
+                <h2>Rozwiązanie</h2>
+                <p>Aplikacja działa w&nbsp;przeglądarce i&nbsp;instaluje się jako ikona na ekranie telefonu, bez sklepu z&nbsp;aplikacjami. Teraz zamówienie wygląda tak:</p>
+                <ol class="m-cs-flow">
+                    <li><b>Wybór klienta.</b> Handlowiec wybiera klienta z&nbsp;listy. Jego rabat i&nbsp;warunki naliczają się same.</li>
+                    <li><b>Wyszukanie produktów.</b> Wyszukiwarka i&nbsp;filtry zamiast przewijania arkusza. Produkty dodaje się przyciskiem „+”, także pełnymi kartonami.</li>
+                    <li><b>Podsumowanie.</b> Aplikacja liczy rabaty, promocje i&nbsp;sumę, a&nbsp;także pilnuje minimum logistycznego.</li>
+                    <li><b>Wysyłka.</b> Hurtownia dostaje maila z&nbsp;tabelą zamówienia i&nbsp;gotowym plikiem Excel. Zamówienie zapisuje się w&nbsp;historii.</li>
+                </ol>
+                <p>Całość da się zrobić z&nbsp;telefonu albo tabletu w&nbsp;kilka chwil, nawet na poboczu drogi. Klient może też złożyć zamówienie sam, na swoim koncie.</p>
+            </section>
+
+            <section>
+                <h2>Co pomaga handlowcowi w&nbsp;sprzedaży</h2>
+                <ul class="m-cs-feats">
+                    <li><b>Lista TOP 50</b>najczęściej zamawiane produkty pod jednym przyciskiem, w&nbsp;kolejności z&nbsp;listy</li>
+                    <li><b>Krótkie daty</b>partie z&nbsp;krótszą datą ważności z&nbsp;rabatem, datą i&nbsp;stanem z&nbsp;pliku od hurtowni</li>
+                    <li><b>Ceny netto i&nbsp;SCD</b>cena dla klienta i&nbsp;sugerowana cena detaliczna przy każdym produkcie</li>
+                    <li><b>Promocje</b>rabat od określonej ilości, z&nbsp;datą końca, widoczny przy produkcie</li>
+                    <li><b>Karty klientów</b>dane, rabat i&nbsp;warunki handlowe każdego klienta w&nbsp;jednym miejscu</li>
+                    <li><b>Zestawienia miesięczne</b>zamówienia i&nbsp;sprzedaż w&nbsp;podziale na klientów, z&nbsp;eksportem do Excela</li>
+                </ul>
+                <p>Cennik, listę TOP 50 i&nbsp;krótkie daty aktualizuje się, wgrywając plik Excel w&nbsp;panelu administratora. Przed zapisaniem widać podgląd zmian.</p>
+            </section>
+
+            <section>
+                <h2>Co można dodać</h2>
+                <p>Aplikacja jest zbudowana pod tę konkretną firmę, więc da się ją rozbudować o&nbsp;to, czego potrzebuje Twój zespół, na przykład:</p>
+                <ul class="m-cs-list">
+                    <li>stany magazynowe hurtowni na żywo,</li>
+                    <li>integrację z&nbsp;systemem hurtowni zamiast maila z&nbsp;plikiem,</li>
+                    <li>zdjęcia produktów i&nbsp;karty informacyjne,</li>
+                    <li>raporty sprzedaży na handlowca i&nbsp;region.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Technologie</h2>
+                <ul class="m-cs-tech">
+                    <li><b>FastAPI</b>serwer aplikacji</li>
+                    <li><b>PWA</b>aplikacja z&nbsp;ikoną na telefonie, bez sklepu</li>
+                    <li><b>SQLite</b>baza zamówień, klientów i&nbsp;cennika</li>
+                    <li><b>Import i&nbsp;eksport XLSX</b>cenniki z&nbsp;Excela, pliki dla hurtowni</li>
+                    <li><b>Docker</b>wdrożenie na serwerze, codzienne kopie zapasowe</li>
+                </ul>
+            </section>
+
+            <aside class="m-banner m-cs-cta">
+                <div>
+                    <h2>Twoi handlowcy też zamawiają przez Excela?</h2>
+                    <p>Podobną aplikację da się zbudować pod Twój cennik, Twoich klientów i&nbsp;Twoją hurtownię. Zacznijmy od bezpłatnej rozmowy.</p>
+                </div>
+                <a href="/#kontakt" class="m-btn">Umów bezpłatną rozmowę</a>
+            </aside>
+
+            <p class="m-cs-back"><a class="m-link" href="/#projekty">← Wszystkie realizacje</a> <span class="sep">·</span> <a class="m-link quiet" href="{% url 'website:case_flowmail' %}">Case study: Flowmail →</a></p>
+        </div>
+    </div>
+</article>
+
+{% endblock %}

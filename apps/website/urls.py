@@ -7,6 +7,7 @@ app_name = 'website'
 urlpatterns = [
     path('', views.home, name='home'),
     path('realizacje/flowmail/', views.case_flowmail, name='case_flowmail'),
+    path('realizacje/zamowienia-b2b/', views.case_b2b_orders, name='case_b2b_orders'),
     path('cennik/', views.pricing, name='pricing'),
     path('kontakt/', views.contact, name='contact'),
     path('polityka-prywatnosci/', views.privacy, name='privacy'),
